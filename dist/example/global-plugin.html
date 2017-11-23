@@ -1,161 +1,159 @@
 ﻿<!DOCTYPE HTML>
 <html>
 
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>easter-plugin</title>
-		<link rel="stylesheet" href="../style/css/easter-css.css">
-		<script src="../js/dragDrag.js"></script>
-		<script src="../js/multiSelect.js"></script>
-		<script src="../js/popLayer.js"></script>
-		<script src="../js/tabMenu.js"></script>
-	</head>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>easter-plugin</title>
+    <link rel="stylesheet" href="../style/css/easter-css.css">
+    <script src="../js/dragDrag.js"></script>
+    <script src="../js/multiSelect.js"></script>
+    <script src="../js/popLayer.js"></script>
+    <script src="../js/tabMenu.js"></script>
+</head>
 
-	<body>
-		<!--拖拽的dom-->
-		<div class="container">
-			<div id="div1"></div>
-			<div id="div2"></div>
-			<div id="div3"></div>
-			<div id="div4"></div>
-		</div>
-		<script type="text/javascript">
-			var bgColor = document.getElementsByClassName("container")[0];
+<body>
+<!--拖拽的dom-->
+<div class="container">
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+</div>
+<script type="text/javascript">
+    var bgColor = document.getElementsByClassName("container")[0];
 
-			dragDrog.init({
-				id: 'div1'
-			});
-			dragDrog.init({
-				id: 'div2',
-				toDown: function() {
-					document.title = 'hello';
-					bgColor.style.background = 'black';
-				}
-			});
-			dragDrog.init({
-				id: 'div3',
-				toDown: function() {
-					document.title = '百度';
-				},
-				toUp: function() {
-					document.title = '一下';
-					bgColor.style.background = 'gray';
-				}
-			});
-			dragDrog.init({
-				id: 'div4',
-				toUp: function() {
-					document.title = 'beybye';
-					bgColor.style.background = 'yellow';
-				}
-			});
-		</script>
-		<!--弹出窗的dom-->
-		<div class="poplayer">
-			<input type="button" class="pop-out-btn" value="左">
-			<input type="button" class="pop-out-btn" value="中">
-			<input type="button" class="pop-out-btn" value="右">
-		</div>
-		<script type="text/javascript">
-			//弹窗对象的创建
-			var aInput = document.getElementsByClassName('pop-out-btn');
-			aInput[0].onclick = function() {
-				var d1 = new popLayer();
-				d1.init({ //配置参数
-					w: 100,
-					h: 420,
-					title: '登录',
-					direction: 'left'
-				});
-			};
-			aInput[1].onclick = function() {
-				var d1 = new popLayer();
-				d1.init({ //配置参数
-					w: 500,
-					h: 320,
-					title: '登录',
-					direction: 'center'
-				});
-			};
-			aInput[2].onclick = function() {
-				var d1 = new popLayer();
-				d1.init({ //配置参数
-					w: 150,
-					h: 420,
-					title: '我不是登录',
-					direction: 'right',
-					mark: true,
-					animation: {
-						switchState: true,
-						animaStyle: 'slide',
-						speed: 30
-					}
-				});
-			};
-		</script>
-		<!--tab页面的dom-->
-		<div class="tabmenu">
-			<div id="tab1">
-				<input class="tab-btn activeBon" type="button" value="1">
-				<input class="tab-btn" type="button" value="2">
-				<input class="tab-btn" type="button" value="3">
-				<div class="show tab-con">111111</div>
-				<div class="hide tab-con">222222</div>
-				<div class="hide tab-con">333333</div>
-			</div>
-			<div id="tab2"></div>
-			<div id="tab3"></div>
-		</div>
-		<script type="text/javascript">
-			//tab页对象的创建
-			var t1 = new tabMenu(); //创建的第一个实例
-			t1.init('tab1', {
-				event: 'click', //传入事件
-				delay: '',
-				animation: false, //是否开启动画，与slideDelay同时使用
-				slideDelay: 30
-			});
-		</script>
-		<!--select选择框的dom-->
-		<div class="multiselect" id="multiSelect">
-			<div class="select-con">
-				<div class="sel-left-con" id="selLeftCon">
-					<ul class="select-ul select-left-ul">
-						<li class="select-li">1</li>
-						<li class="select-li">2</li>
-						<li class="select-li">3</li>
-						<li class="select-li">4</li>
-						<li class="select-li">5</li>
-						<li class="select-li">6</li>
-						<li class="select-li">7</li>
-						<li class="select-li">8</li>
-						<li class="select-li">9</li>
-						<li class="select-li">10</li>
-					</ul>
-				</div>
-				<div class="select-btn-con">
-					<button class="select-btn" id="addAnBtn" type="button">添加</button>
-					<button class="select-btn" id="delAnBtn" type="button">删除</button>
-					<button class="select-btn" id="addAllBtn" type="button">添加全部</button>
-					<button class="select-btn" id="delAllBtn" type="button">删除全部</button>
-				</div>
-				<div class="sel-right-con" id="selRightCon">
-					<ul class="select-ul select-right-ul">
+    dragDrog.init({
+        id: 'div1'
+    });
+    dragDrog.init({
+        id: 'div2',
+        toDown: function () {
+            document.title = 'hello';
+            bgColor.style.background = 'black';
+        }
+    });
+    dragDrog.init({
+        id: 'div3',
+        toDown: function () {
+            document.title = '百度';
+        },
+        toUp: function () {
+            document.title = '一下';
+            bgColor.style.background = 'gray';
+        }
+    });
+    dragDrog.init({
+        id: 'div4',
+        toUp: function () {
+            document.title = 'beybye';
+            bgColor.style.background = 'yellow';
+        }
+    });
+</script>
+<!--弹出窗的dom-->
+<div class="poplayer">
+    <input type="button" class="pop-out-btn" value="左">
+    <input type="button" class="pop-out-btn" value="中">
+    <input type="button" class="pop-out-btn" value="右">
+</div>
+<script type="text/javascript">
+    //弹窗对象的创建
+    var aInput = document.getElementsByClassName('pop-out-btn');
+    aInput[0].onclick = function () {
+        var d1 = new popLayer();
+        d1.init({ //配置参数
+            w: 100,
+            h: 420,
+            title: '登录',
+            direction: 'left'
+        });
+    };
+    aInput[1].onclick = function () {
+        var d1 = new popLayer();
+        d1.init({ //配置参数
+            w: 500,
+            h: 320,
+            title: '登录',
+            direction: 'center'
+        });
+    };
+    aInput[2].onclick = function () {
+        var d1 = new popLayer();
+        d1.init({ //配置参数
+            w: 150,
+            h: 420,
+            title: '我不是登录',
+            direction: 'right',
+            mark: true,
+            animation: {
+                switchState: true,
+                animaStyle: 'slide',
+                speed: 30
+            }
+        });
+    };
+</script>
+<!--tab页面的dom-->
+<div class="tabmenu">
+    <div id="tab1">
+        <input class="tab-btn activeBon" type="button" value="1">
+        <input class="tab-btn" type="button" value="2">
+        <input class="tab-btn" type="button" value="3">
+        <div class="show tab-con">111111</div>
+        <div class="hide tab-con">222222</div>
+        <div class="hide tab-con">333333</div>
+    </div>
+    <div id="tab2"></div>
+    <div id="tab3"></div>
+</div>
+<script type="text/javascript">
+    //tab页对象的创建
+    var t1 = new tabMenu('tab1', {
+        event: 'click', //传入事件
+        delay: '',
+        animation: false, //是否开启动画，与slideDelay同时使用
+        slideDelay: 30
+    }); //创建的第一个实例
 
-					</ul>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript">
-			var sel = new multiSelect();
-			sel.init('multiSelect', {
-				toolbox: false,
-				callback: function() {
-					console.log("123");
-				}
-			});
-		</script>
+</script>
+<!--select选择框的dom-->
+<div class="multiselect" id="multiSelect">
+    <div class="select-con">
+        <div class="sel-left-con" id="selLeftCon">
+            <ul class="select-ul select-left-ul">
+                <li class="select-li">1</li>
+                <li class="select-li">2</li>
+                <li class="select-li">3</li>
+                <li class="select-li">4</li>
+                <li class="select-li">5</li>
+                <li class="select-li">6</li>
+                <li class="select-li">7</li>
+                <li class="select-li">8</li>
+                <li class="select-li">9</li>
+                <li class="select-li">10</li>
+            </ul>
+        </div>
+        <div class="select-btn-con">
+            <button class="select-btn" id="addAnBtn" type="button">添加</button>
+            <button class="select-btn" id="delAnBtn" type="button">删除</button>
+            <button class="select-btn" id="addAllBtn" type="button">添加全部</button>
+            <button class="select-btn" id="delAllBtn" type="button">删除全部</button>
+        </div>
+        <div class="sel-right-con" id="selRightCon">
+            <ul class="select-ul select-right-ul">
 
-	</body>
-
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var sel = new multiSelect();
+    sel.init('multiSelect', {
+        toolbox: false,
+        callback: function () {
+            console.log("123");
+        }
+    });
+</script>
+</body>
 </html>
