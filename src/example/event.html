@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../uitil_js/EventEmiter.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    var emitter = new Em();
+
+    function handleOne(a, b, c) {
+        console.log('第一个监听函数', a, b, c)
+    }
+
+    function handleSecond(a, b, c) {
+        console.log('第二个监听函数', a, b, c)
+    }
+
+    function handleThird(a, b, c) {
+        console.log('第三个监听函数', a, b, c)
+    }
+
+    emitter.on("demo", handleOne)
+        .on("demo", handleThird);
+
+    emitter.emit('demo', [1, 2, 3]);
+    //    // => 第一个监听函数 1 2 3
+    //    // => 第二个监听函数 1 2 3
+    //    // => 第三个监听函数 1 2 3
+    //
+    //    emitter.off('demo', handleThird);
+    //    emitter.emit('demo', [1, 2, 3]);
+    //    // => 第一个监听函数 1 2 3
+    //
+    //    emitter.allOff();
+    //    emitter.emit('demo', [1, 2, 3]);
+</script>
+</html>
