@@ -43,7 +43,7 @@
         this._wrapped = obj;
     };
 
-    // Export the Underscore object for **Node.js**, with
+    // Export the Underscore object for **Node.ui_js**, with
     // backwards-compatibility for the old `require()` API. If we're in
     // the browser, add `_` as a global object.
     if (typeof exports !== 'undefined') {
@@ -1271,7 +1271,7 @@
     // Utility Functions
     // -----------------
 
-    // Run Underscore.js in *noConflict* mode, returning the `_` variable to its
+    // Run Underscore.ui_js in *noConflict* mode, returning the `_` variable to its
     // previous owner. Returns a reference to the Underscore object.
     _.noConflict = function () {
         root._ = previousUnderscore;

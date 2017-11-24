@@ -61,7 +61,7 @@ function extend(obj1, obj2) {
 /*
  * version:0.0.0
  * author:eaterCat
- * this is a plugin about select
+ * this is a alias about select
  * */
 
 function multiSelect() {
@@ -247,7 +247,7 @@ function hasClass(obj, sClass) {
 //vaesion:1.0
 // author:eaterCat
 //constructer(class)
-//this is the second plugin，poplayer
+//this is the second alias，poplayer
 */
 
 function popLayer() {

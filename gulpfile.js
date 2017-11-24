@@ -17,18 +17,18 @@ gulp.task('less', function() {
 		.pipe(gulp.dest('dist/style/css'))
 });
 
-//check the js
+//check the ui_js
 gulp.task('jshint', function() {
-	gulp.src('dist/js/*.js')
+	gulp.src('dist/ui_js/*.ui_js')
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'))
 });
 
 gulp.task('scripts', function() {
-	gulp.src('dist/js/*.js')
-		.pipe(concat('global-plugin.js'))
+	gulp.src('dist/ui_js/*.ui_js')
+		.pipe(concat('global-alias.ui_js'))
 		.pipe(gulp.dest('dist/concat'))
-		.pipe(rename('global-plugin.min.js'))
+		.pipe(rename('global-alias.min.ui_js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/concat'));
 });
@@ -40,7 +40,7 @@ gulp.task('default', function() {
 	gulp.watch('dist/style/global.less', function() {
 		gulp.run('less')
 	})
-	gulp.watch('dist/js/*.js', function() {
+	gulp.watch('dist/ui_js/*.ui_js', function() {
 		gulp.run('jshint', 'scripts')
 	})
 
