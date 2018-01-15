@@ -21,4 +21,13 @@
 - result
 - _.mixin
 
+#### 类型判断
+- _.isMatch
+- _.isEqual
+- _.isEmpty
+- _.isElement
+- _.isArray
+- _.isObject
+- Arguments/Function/String/Number/Date/RegExp/Error
+
 

@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b69af1-7d2d-4cf7-8b96-499da6954bd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/example/Kiana.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/example/array.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/util_js/ArrayOperations.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alias/underscore.js" afterPath="$PROJECT_DIR$/src/alias/underscore.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/util_js/kiana.js" afterPath="$PROJECT_DIR$/src/util_js/Kiana.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util_js/Kiana.js" afterPath="$PROJECT_DIR$/src/util_js/Kiana.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,33 +19,36 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Kiana.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util_js/Kiana.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-123">
-              <caret line="211" column="4" lean-forward="true" selection-start-line="211" selection-start-column="4" selection-end-line="211" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="21" column="2" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+            <state relative-caret-position="269">
+              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="underscore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Kiana.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/util_js/Kiana.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="underscore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/alias/underscore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="2595" column="26" lean-forward="true" selection-start-line="2595" selection-start-column="26" selection-end-line="2595" selection-end-column="26" />
+            <state relative-caret-position="271">
+              <caret line="2459" column="4" lean-forward="false" selection-start-line="2459" selection-start-column="4" selection-end-line="2460" selection-end-column="32" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#73634#73963#0" expanded="false" />
+                <element signature="e#74480#74533#0" expanded="false" />
+                <element signature="e#75493#82280#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -91,6 +91,8 @@
       <find>_.property</find>
       <find>shallowProperty</find>
       <find>deepGet</find>
+      <find>_.difference</find>
+      <find>isObject</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,8 +105,8 @@
         <option value="$PROJECT_DIR$/src/alias/underscore.js" />
         <option value="$PROJECT_DIR$/src/util_js/ArrayOperations.js" />
         <option value="$PROJECT_DIR$/src/example/Kiana.html" />
-        <option value="$PROJECT_DIR$/src/util_js/Kiana.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/util_js/Kiana.js" />
       </list>
     </option>
   </component>
@@ -280,7 +282,7 @@
       <updated>1515638344879</updated>
       <workItem from="1515638346116" duration="1789000" />
       <workItem from="1515727231726" duration="1447000" />
-      <workItem from="1515980344956" duration="15410000" />
+      <workItem from="1515980344956" duration="19524000" />
     </task>
     <task id="LOCAL-00001" summary="2018-1-11">
       <created>1515665601654</created>
@@ -293,7 +295,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18646000" />
+    <option name="totallyTimeSpent" value="22760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -306,7 +308,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -329,7 +331,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="2018-1-11" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -395,29 +399,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="21" column="2" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        <state relative-caret-position="299">
+          <caret line="98" column="42" lean-forward="true" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util_js/Kiana.js">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="211" column="4" lean-forward="true" selection-start-line="211" selection-start-column="4" selection-end-line="211" selection-end-column="11" />
+        <state relative-caret-position="269">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alias/underscore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="2595" column="26" lean-forward="true" selection-start-line="2595" selection-start-column="26" selection-end-line="2595" selection-end-column="26" />
+        <state relative-caret-position="271">
+          <caret line="2459" column="4" lean-forward="false" selection-start-line="2459" selection-start-column="4" selection-end-line="2460" selection-end-column="32" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#73634#73963#0" expanded="false" />
+            <element signature="e#74480#74533#0" expanded="false" />
+            <element signature="e#75493#82280#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util_js/Kiana.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

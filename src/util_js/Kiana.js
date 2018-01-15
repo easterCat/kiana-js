@@ -76,7 +76,6 @@
         return cb(value, context, Infinity);
     };
 
-
     _.functions = function (obj) {
         var names = [];
         for (var key in obj) {
@@ -84,19 +83,6 @@
         }
         return names.sort();
     };
-
-    _.isFunction = function (obj) {
-        return Object.prototype.toString.call(obj) === '[object Function]';
-    };
-
-    _.isObject = function (obj) {
-        var type = typeof obj;
-        return type === 'function ' || type === 'object' && !!obj;
-    };
-
-    _.isArray = Array.isArray || function (obj) {
-            return Object.prototype.toString.call(obj) === '[object Array]';
-        };
 
     _.isMatch = function (object, attrs) {
         var keys = _.keys(attrs),
@@ -110,6 +96,43 @@
             }
         }
     };
+
+    _.isEqual = function (a, b) {
+
+    };
+
+    _.isEmpty = function (obj) {
+        return !!(obj && obj.nodeType === 1);
+    };
+
+    _.isElement = function (obj) {
+
+    };
+    _.isArray = Array.isArray || function (obj) {
+            return Object.prototype.toString.call(obj) === '[object Array]';
+        };
+
+
+    /**
+     * 判断是否为对象,这里的对象包括 function 和 object
+     * @param obj
+     * @returns {boolean}
+     */
+    _.isObject = function (obj) {
+        //排除掉明显不是对象的obj
+        if (!obj || Object.prototype.toString.call(obj) !== '[object Object]') {
+            return false;
+        }
+
+        var type = typeof obj;
+        return type === 'function ' || type === 'object' && !!obj;
+    };
+
+    _.each(['Function', 'Date', 'Error', 'String', 'Arguments', 'Number', 'RegExp'], function (item) {
+        _['is' + item] = function (obj) {
+            return Object.prototype.toString.call(obj) === '[object ' + item + ']';
+        }
+    });
 
     _.matcher = function (attrs) {
         attrs = _.extend({}, attrs);
@@ -233,7 +256,7 @@
 
     _.prototype.valueOf = _.prototype.toJSON = _.prototype.value;
 
-    _.prototype.toString = function () {
+    _.prototype.toStrings = function () {
         return '' + this._wrapped;
     }
 
