@@ -197,6 +197,14 @@
         }
     };
 
+    _.debounce = function (func, wait) {
+        var timeout;
+        return function () {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        }
+    };
+
 
     _.extend = function () {
         var deep = false;
@@ -293,6 +301,7 @@
         return results;
     };
 
+
     _.identity = function (value) {
         return value;
     };
@@ -334,6 +343,7 @@
         instance._chain = true;
         return instance;
     };
+
 
     var result = function (instance, obj) {
         return instance._chain ? _(obj).chain() : obj;

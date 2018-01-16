@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="../util_js/Kiana.js">
+    <style>
+        #container{
+            width: 100%; height: 200px; line-height: 200px; text-align: center; color: #fff; background-color: #444; font-size: 30px;
+        }
+    </style>
+    <script src="../util_js/Kiana.js"></script>
 
-    </script>
-    <script>
-
+</head>
+<body>
+<div id="container"></div>
+</body>
+<script>
+    window.onload = function () {
         console.log(_.map([1, 2, 3], function (item) {
             return item + 1;
         }));
@@ -18,16 +26,23 @@
         var b = {bb: {dd: 2}};
         var c = {bb: {cc: 3}};
 
-        var d = [1,2,3];
+        var d = [1, 2, 3];
         console.log(_.extend({}, a, b, c));
 
         console.log(_.isFunction(function () {
         }));
 
         console.log(_.isArray(d));
-    </script>
-</head>
-<body>
 
-</body>
+        var count = 1;
+        var container = document.getElementById('container');
+
+        function getUserAction() {
+            container.innerHTML = count++;
+        }
+
+        console.log(_.debounce);
+        container.onmousemove = _.debounce(getUserAction, 1000);
+    }
+</script>
 </html>

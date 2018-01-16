@@ -21,6 +21,9 @@
 - result
 - _.mixin
 
+#### 函数
+- _.debouncing
+
 #### 对象
 - _.isArrayLike 判断类数组对象
 - _.isPlainObject 判断纯对象
