@@ -4,6 +4,7 @@
     <list default="true" id="18b69af1-7d2d-4cf7-8b96-499da6954bd0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/example/Kiana.html" afterPath="$PROJECT_DIR$/src/example/Kiana.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util_js/Kiana.js" afterPath="$PROJECT_DIR$/src/util_js/Kiana.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,37 +20,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="120">
+              <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kiana.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Kiana.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util_js/Kiana.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+            <state relative-caret-position="537">
+              <caret line="352" column="6" lean-forward="false" selection-start-line="352" selection-start-column="6" selection-end-line="352" selection-end-column="6" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="underscore.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/alias/underscore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="2459" column="4" lean-forward="false" selection-start-line="2459" selection-start-column="4" selection-end-line="2460" selection-end-column="32" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#73634#73963#0" expanded="false" />
-                <element signature="e#74480#74533#0" expanded="false" />
-                <element signature="e#75493#82280#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -57,8 +43,8 @@
       <file leaf-file-name="Kiana.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/example/Kiana.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            <state relative-caret-position="690">
+              <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -93,6 +79,8 @@
       <find>deepGet</find>
       <find>_.difference</find>
       <find>isObject</find>
+      <find>extend</find>
+      <find>_.isElement</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,9 +92,9 @@
         <option value="$PROJECT_DIR$/src/util_js/kiana.js" />
         <option value="$PROJECT_DIR$/src/alias/underscore.js" />
         <option value="$PROJECT_DIR$/src/util_js/ArrayOperations.js" />
+        <option value="$PROJECT_DIR$/src/util_js/Kiana.js" />
         <option value="$PROJECT_DIR$/src/example/Kiana.html" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/util_js/Kiana.js" />
       </list>
     </option>
   </component>
@@ -142,8 +130,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -156,27 +144,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easter_utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easter_utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/web-project/ZJ_WEB" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../easter_js" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -282,7 +256,8 @@
       <updated>1515638344879</updated>
       <workItem from="1515638346116" duration="1789000" />
       <workItem from="1515727231726" duration="1447000" />
-      <workItem from="1515980344956" duration="19524000" />
+      <workItem from="1515980344956" duration="20604000" />
+      <workItem from="1516065663197" duration="8834000" />
     </task>
     <task id="LOCAL-00001" summary="2018-1-11">
       <created>1515665601654</created>
@@ -291,11 +266,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515665601654</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2018-1-11">
+      <created>1516011041241</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1516011041242</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22760000" />
+    <option name="totallyTimeSpent" value="32674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -337,6 +319,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alias/underscore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67770">
+          <caret line="2459" column="4" lean-forward="false" selection-start-line="2459" selection-start-column="4" selection-end-line="2460" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/example/Kiana.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util_js/Kiana.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3180">
+          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/util_js/Kiana.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -371,34 +385,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util_js/ArrayOperations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/example/array.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/example/Kiana.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util_js/ArrayOperations.js" />
+    <entry file="file://$PROJECT_DIR$/src/example/array.html" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -407,31 +398,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/src/example/Kiana.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="690">
+          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alias/underscore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="2459" column="4" lean-forward="false" selection-start-line="2459" selection-start-column="4" selection-end-line="2460" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#73634#73963#0" expanded="false" />
-            <element signature="e#74480#74533#0" expanded="false" />
-            <element signature="e#75493#82280#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-17117">
+          <caret line="2444" column="19" lean-forward="false" selection-start-line="2444" selection-start-column="7" selection-end-line="2444" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util_js/Kiana.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        <state relative-caret-position="537">
+          <caret line="352" column="6" lean-forward="false" selection-start-line="352" selection-start-column="6" selection-end-line="352" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding />
         </state>
       </provider>

@@ -105,12 +105,25 @@
         return !!(obj && obj.nodeType === 1);
     };
 
+    /**
+     * 判断是否为 DOM 元素
+     * @param obj
+     * @returns {boolean}
+     */
     _.isElement = function (obj) {
-
+        // 确保 obj 不是 null, undefined 等假值
+        // 并且 obj.nodeType === 1
+        return !!(obj && obj.nodeType === 1);
     };
-    _.isArray = Array.isArray || function (obj) {
-            return Object.prototype.toString.call(obj) === '[object Array]';
-        };
+    /**
+     * 判断是否是数组对象
+     * @param obj
+     * @returns {boolean}
+     */
+    _.isArray = function (obj) {
+        if (Array.isArray) return Array.isArray(obj);
+        else return type(obj) === 'array';
+    };
 
 
     /**
@@ -119,20 +132,63 @@
      * @returns {boolean}
      */
     _.isObject = function (obj) {
-        //排除掉明显不是对象的obj
+        return type(obj) === 'object';
+    };
+
+    _.isPlainObject = function (obj) {
+        var proto, Ctor, newobj = {};
+        // 排除掉明显不是obj的以及一些宿主对象如Window
         if (!obj || Object.prototype.toString.call(obj) !== '[object Object]') {
             return false;
         }
-
-        var type = typeof obj;
-        return type === 'function ' || type === 'object' && !!obj;
+        /**
+         * getPrototypeOf es5 方法，获取 obj 的原型
+         * 以 new Object 创建的对象为例的话
+         * obj.__proto__ === Object.prototype
+         */
+        proto = Object.getPrototypeOf(obj);
+        // 没有原型的对象是纯粹的，Object.create(null) 就在这里返回 true
+        if (!proto) return true;
+        /**
+         * 以下判断通过 new Object 方式创建的对象
+         * 判断 proto 是否有 constructor 属性，如果有就让 Ctor 的值为 proto.constructor
+         * 如果是 Object 函数创建的对象，Ctor 在这里就等于 Object 构造函数
+         */
+        Ctor = newobj.hasOwnProperty.call(proto, 'constructor') && proto.constructor;
+        // 在这里判断 Ctor 构造函数是不是 Object 构造函数，用于区分自定义构造函数和 Object 构造函数
+        return typeof Ctor === "function" && newobj.hasOwnProperty.toString.call(Ctor) === newobj.hasOwnProperty.toString.call(Object);
     };
 
+    /**
+     * 遍历相应的数据创建对应的类型判断
+     */
     _.each(['Function', 'Date', 'Error', 'String', 'Arguments', 'Number', 'RegExp'], function (item) {
         _['is' + item] = function (obj) {
-            return Object.prototype.toString.call(obj) === '[object ' + item + ']';
+            return type(obj) === item.toLowerCase();
         }
     });
+    /**
+     * Window 对象作为客户端 JavaScript 的全局对象，它有一个 window 属性指向自身
+     * @param obj
+     */
+    _.isWindow = function (obj) {
+        //如果ibj有一个window属性指向自身，说明是window对象
+        return obj !== null && obj === obj.window
+    };
+
+    var class2type = {};
+
+    _.each("Boolean Number String Function Array Date RegExp Object Error Null Undefined".split(" "), function (item, index) {
+        class2type["[object " + item + "]"] = item.toLowerCase();
+    });
+
+    function type(obj) {
+        if (obj === null) {
+            return obj + '';
+        }
+        return typeof obj === 'object' || typeof obj === 'function' ? class2type[Object.prototype.toString.call(obj)] || 'object' : typeof obj;
+    }
+
 
     _.matcher = function (attrs) {
         attrs = _.extend({}, attrs);
@@ -141,6 +197,58 @@
         }
     };
 
+
+    _.extend = function () {
+        var deep = false;
+        var options, copy, src, copyIsArray, clone;
+        var length = arguments.length;
+        var i = 1;
+        // 第一个参数不传布尔值的情况下，target默认是第一个参数
+        var target = arguments[0] || {};
+        // 如果第一个参数是布尔值，第二个参数是才是target
+        if (typeof target === 'boolean') {
+            deep = target;
+            target = arguments[i] || {};
+            i++;
+        }
+        // 如果target不是对象，我们是无法进行复制的，所以设为{}
+        if (typeof target !== 'object') {
+            target = {};
+        }
+
+        for (; i < length; i++) {
+            // 获取当前对象
+            options = arguments[i];
+            // 要求不能为空 避免extend(a,,b)这种情况
+            if (options !== null) {
+                for (var item in options) {
+                    // 目标属性值
+                    src = target[name];
+                    // 要复制的对象的属性值
+                    copy = options[item];
+                    // 解决循环引用
+                    if (target === copy) {
+                        continue;
+                    }
+                    // 要递归的对象必须是 plainObject 或者数组
+                    if (deep && copy && (_.isPlainObject(copy)) || (copyIsArray = Array.isArray(copy))) {
+                        if (copyIsArray) {
+                            copyIsArray = false;
+                            clone = src && Array.isArray(src) ? src : [];
+                        } else {
+                            clone = src && _.isPlainObject(src) ? src : {};
+                        }
+                        // 递归调用
+                        target[name] = extend(deep, clone, copy);
+                    }
+                    else if (copy !== undefined) {
+                        target[name] = copy;
+                    }
+                }
+            }
+        }
+        return target;
+    };
 
     _.property = function (path) {
         if (!_.isArray(path)) {

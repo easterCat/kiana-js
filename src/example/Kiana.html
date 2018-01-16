@@ -10,8 +10,21 @@
 
         console.log(_.map([1, 2, 3], function (item) {
             return item + 1;
-        }))
-        console.log(_.chain([1, 2, 3, 3, 4, 2]).unique().getMax())
+        }));
+        console.log(_.chain([1, 2, 3, 3, 4, 2]).unique().getMax());
+
+
+        var a = {aa: 1};
+        var b = {bb: {dd: 2}};
+        var c = {bb: {cc: 3}};
+
+        var d = [1,2,3];
+        console.log(_.extend({}, a, b, c));
+
+        console.log(_.isFunction(function () {
+        }));
+
+        console.log(_.isArray(d));
     </script>
 </head>
 <body>
