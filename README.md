@@ -22,7 +22,8 @@
 - _.mixin
 
 #### 函数
-- _.debouncing
+- _.debounce 防抖
+_ _.throttle 节流
 
 #### 对象
 - _.isArrayLike 判断类数组对象
