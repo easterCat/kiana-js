@@ -22,18 +22,8 @@
 </body>
 <script>
     window.onload = function () {
-        var count = 0;
-
-        function getUserAction() {
-            container.innerHTML = count++;
-        }
-
-        console.log(_.debounce);
-//        container.onmousemove = _.debounce(getUserAction, 1000);
-        container.onmousemove = _.throttle(getUserAction, 3000, {
-//            leading: false
-//            trailing: false
-        });
+        var arr = [11, 22, 11, 3, 4, 5, 4, 3, 22, 11];
+        console.log(_.unique(arr));
     }
 
 

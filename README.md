@@ -2,12 +2,7 @@
 - optimizeCb
 - cb
 - _.iteratee
-
 - _.each
-- _.isFunction
-- _.isObject
-- _.isArray
-- _.isMatch
 - _.matcher
 - _.property
 - shallowProperty
@@ -16,14 +11,15 @@
 - _.map
 - _.identity
 - _.getMax
-- _.unique
-
 - result
 - _.mixin
 
 #### 函数
 - _.debounce 防抖
 _ _.throttle 节流
+
+#### 数组
+- _.unique 去重
 
 #### 对象
 - _.isArrayLike 判断类数组对象

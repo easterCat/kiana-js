@@ -198,7 +198,7 @@
     };
 
     /**
-     * 防抖
+     * 函数防抖
      * @param func
      * @param wait
      * @param immediate
@@ -235,7 +235,7 @@
     };
 
     /**
-     * 节流 鼠标移入能立刻执行，停止触发的时候还能再执行一次！
+     * 函数节流 鼠标移入能立刻执行，停止触发的时候还能再执行一次！
      * @param func 回调函数
      * @param wait 延时时间
      * @param options leading:false禁用第一次执行,trailing: false 禁用结束后再执行一次
@@ -272,18 +272,56 @@
                 func.apply(context, args);
                 if (!timeout) context = args = null;
             } else if (!timeout && options.trailing !== false) {
-                console.log(remaining);
+                //条件满足，利用延时函数在结束后再执行一次
                 timeout = setTimeout(later, remaining);
             }
         };
 
         throttled.cancel = function () {
             clearTimeout(timeout);
-            previous = 0;
+            previous_time = 0;
             timeout = null;
         };
 
         return throttled;
+    };
+
+    /**
+     * 数组去重
+     * @param arr 传入的数组
+     * @param isSorted 判断是否是已经排序过得数组
+     * @param iteratee 迭代函数
+     * @returns {Array}
+     */
+    _.unique = function (arr, isSorted, iteratee) {
+        var res = [];
+        var seen = [];
+
+        if (Array.prototype.filter && !iteratee) {
+            res = arr.filter(function (item, index, own) {
+                return arr.indexOf(item) === index;
+            })
+        } else {
+            for (var i = 0; i < arr.length; i++) {
+                var value = arr[i];
+                var afterValue = iteratee ? iteratee(value, index, arr) : value;
+                if (isSorted) {
+                    if (!i || seen !== afterValue) {
+                        res.push(value);
+                    }
+                    seen = afterValue;
+                } else if (iteratee) {
+                    if (seen.indexOf(afterValue) === -1) {
+                        seen.push(afterValue);
+                        res.push(value);
+                    }
+                } else if (res.indexOf(value) === -1) {
+                    res.push(value);
+                }
+            }
+        }
+
+        return res;
     };
 
     _.extend = function () {
