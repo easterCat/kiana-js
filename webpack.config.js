@@ -4,16 +4,15 @@
 const path = require('path');
 
 module.exports = {
-    context: path.resolve(__dirname, 'src'),
     resolve: {
         modules: [
             path.resolve(__dirname, 'node_modules')
         ]
     },
-    entry: ["babel-polyfill", "./index.js"],
+    entry: path.resolve(__dirname, 'src/index.js'),
     output: {
         path: path.resolve(__dirname, 'dist'), //打包的文件夹
-        filename: 'kiana.js',
+        filename: 'index.js'
     },
     module: {
         rules: [
@@ -34,7 +33,18 @@ module.exports = {
                     options: {
                         minimize: false
                     }
-                }],
+                }]
+            },
+            {
+                test: /index\.html/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name (file) {
+                            return '[name].[ext]'
+                        }
+                    }
+                }]
             }
         ]
     },
@@ -45,5 +55,5 @@ module.exports = {
         port: 3333,//设置监听端口4333
         hot: true,//开启热替换
         colors: true
-    },
+    }
 };
