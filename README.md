@@ -20,6 +20,10 @@ _ _.throttle 节流
 
 #### 数组
 - _.unique 去重
+- _.getMax
+- _.flatten 数组拍平
+- _.union
+- _.difference
 
 #### 对象
 - _.isArrayLike 判断类数组对象
@@ -41,6 +45,8 @@ _ _.throttle 节流
 
 #### 工具
 - type 类型判断
+- property
+- getLength
 
 #### 链式
 - _.chain

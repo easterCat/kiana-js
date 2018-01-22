@@ -72,6 +72,16 @@
         return _.property(value);
     };
 
+    var getLength = property('length');
+
+    // 闭包
+    function property(key) {
+        return function (obj) {
+            //使用void 0替代undefined已防止undefined在低版本浏览器呗重写
+            return obj === null ? void 0 : obj[key];
+        };
+    }
+
     _.iteratee = function (value, context) {
         return cb(value, context, Infinity);
     };
@@ -324,6 +334,100 @@
         return res;
     };
 
+
+    /**
+     * 将嵌套的数组展开
+     * @param arr
+     * @param shallow
+     * @returns {*}
+     */
+    _.flatten = function (arr, shallow) {
+        return flatten(arr, shallow, false);
+        //01
+        // var result = [];
+        //
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (Array.isArray(arr[i])) {
+        //         result = result.concat(_.flatten(arr[i]));
+        //     } else {
+        //         result.push(arr[i]);
+        //     }
+        // }
+        // return result;
+
+        //    02
+        // return arr.toString().split(',').map(function (item) {
+        //     return Number(item);
+        // })
+
+        //03
+        // return arr.reduce(function (prev, next) {
+        //     return prev.concat(Array.isArray(next) ? _.flatten(next) : next)
+        // }, [])
+
+        //    04
+        // while (arr.some(item => Array.isArray(item))) {
+        //     arr = [].concat(...arr)
+        // }
+        // return arr;
+    };
+
+    _.union = function () {
+        return unique(flatten(arguments, true, true));
+    };
+
+    _.difference = function () {
+
+    };
+
+    function unique(array) {
+        return Array.from(new Set(array));
+    }
+
+
+    function difference(array, ...rest) {
+        rest = flatten(rest, true, true);
+        return array.filter(function (item) {
+            return rest.indexOf(item) === -1;
+        })
+    }
+
+    /**
+     * 数组扁平化
+     * @param  {Array} input   要处理的数组
+     * @param  {boolean} shallow 是否只扁平一层
+     * @param  {boolean} strict  是否严格处理元素，下面有解释
+     * @param  {Array} output  这是为了方便递归而传递的参数
+     * 源码地址：https://github.com/jashkenas/underscore/blob/master/underscore.js#L528
+     */
+    function flatten(input, shallow, strict, startIndex) {
+        // 递归使用的时候会用到output
+        var output = [];
+        var idx = output.length;
+
+        for (var i = startIndex || 0, length = getLength(input); i < length; i++) {
+            var value = input[i];
+            // 数组 或者 arguments，就进行处理
+            if (isArrayLike(value) && (_.isArray(value) || _.isArguments(value))) {
+                // 如果是只扁平一层，遍历该数组，依此填入 output
+                if (shallow) {
+                    var j = 0, len = value.length;
+                    output.length += len;
+                    while (j < len) output[idx++] = value[j++];
+                }
+                // 如果是全部扁平就递归，传入已经处理的 output，递归中接着处理 output
+                else {
+                    value = flatten(value, shallow, strict);
+                }
+            }
+            // 不是数组，根据 strict 的值判断是跳过不处理还是放入 output
+            else if (!strict) {
+                output[idx++] = value;
+            }
+        }
+        return output;
+    }
+
     _.extend = function () {
         var deep = false;
         var options, copy, src, copyIsArray, clone;
@@ -438,23 +542,6 @@
         return max;
     };
 
-    /**
-     * 数组去重
-     * @param arr
-     * @returns {Array}
-     */
-    _.unique = function (arr) {
-        var hash = [];
-        for (var i = 0; i < arr.length; i++) {
-            hash[arr[i]] = 0;
-        }
-        var keys = [];
-        var j = 0;
-        for (var key in hash) {
-            keys[j++] = key;
-        }
-        return keys;
-    };
 
     _.chain = function (obj) {
         var instance = _(obj);
