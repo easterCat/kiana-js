@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b69af1-7d2d-4cf7-8b96-499da6954bd0" name="Default" comment="2018-1-23">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alias/ud.js" afterPath="$PROJECT_DIR$/src/alias/ud.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kiana/Kiana.js" afterPath="$PROJECT_DIR$/src/kiana/Kiana.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kiana/arrays/arrays.js" afterPath="$PROJECT_DIR$/src/kiana/arrays/arrays.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kiana/arrays/index.js" afterPath="$PROJECT_DIR$/src/kiana/arrays/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +20,11 @@
       <file leaf-file-name="arrays.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kiana/arrays/arrays.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+            <state relative-caret-position="360">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
-                <element signature="e#3475#3694#0" expanded="false" />
-                <element signature="e#4145#4237#0" expanded="false" />
+                <element signature="e#3488#3707#0" expanded="false" />
+                <element signature="e#4158#4250#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -155,8 +150,8 @@
         <option value="$PROJECT_DIR$/src/kiana/arrays/index.js" />
         <option value="$PROJECT_DIR$/src/kiana/Kiana.js" />
         <option value="$PROJECT_DIR$/src/alias/ud.js" />
-        <option value="$PROJECT_DIR$/src/kiana/arrays/arrays.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/kiana/arrays/arrays.js" />
       </list>
     </option>
   </component>
@@ -440,7 +435,7 @@
       <workItem from="1516349468115" duration="687000" />
       <workItem from="1516583367748" duration="12885000" />
       <workItem from="1516606139170" duration="5733000" />
-      <workItem from="1516686323756" duration="12573000" />
+      <workItem from="1516686323756" duration="14147000" />
     </task>
     <task id="LOCAL-00001" summary="2018-1-11">
       <created>1515665601654</created>
@@ -474,10 +469,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84433000" />
+    <option name="totallyTimeSpent" value="86007000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -871,11 +866,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kiana/arrays/arrays.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        <state relative-caret-position="360">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
-            <element signature="e#3475#3694#0" expanded="false" />
-            <element signature="e#4145#4237#0" expanded="false" />
+            <element signature="e#3488#3707#0" expanded="false" />
+            <element signature="e#4158#4250#0" expanded="false" />
           </folding>
         </state>
       </provider>

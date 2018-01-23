@@ -17,7 +17,7 @@ module.exports = {
  * 数组扁平化
  * _.flatten/
  * @param  {Array} input   要处理的数组
- * @param  {boolean} shallow 是否只扁平一层
+ * @param  {boolean} shallow true只扁平一层,false为全部展开
  * @param  {boolean} strict  是否严格处理元素，下面有解释
  * @param  {Number} startIndex  开始查找的起始位置
  * 源码地址：https://github.com/jashkenas/underscore/blob/master/underscore.js#L528
