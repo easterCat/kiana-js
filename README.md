@@ -21,9 +21,14 @@ _ _.throttle 节流
 #### 数组
 - _.unique 去重
 - _.getMax
-- _.flatten 数组拍平
 - _.union
 - _.difference
+- _.flatten 数组展开
+- _.findIndex 查找下标
+- _.findLastIndex 从后查找第一次出现的下标
+- _.sortedIndex 排序后的下标
+- _.indexOf 查找下标
+- _.lastIndexOf 倒序查找下标
 
 #### 对象
 - _.isArrayLike 判断类数组对象

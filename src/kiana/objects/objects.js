@@ -3,7 +3,7 @@
  */
 module.exports = {
     isArrayLike: isArrayLike,
-    isArray: isArray
+    isArray: isArray,
 };
 
 var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
@@ -22,4 +22,5 @@ function isArray(obj) {
     if (Array.isArray) return Array.isArray(obj);
     else return type(obj) === 'array';
 }
+
 

@@ -1,4 +1,11 @@
-import {flatten} from './arrays';
+import {
+    flatten,
+    findIndex,
+    findLastIndex,
+    sortedIndex,
+    indexOf,
+    lastIndexOf
+} from './arrays';
 
 (function () {
     'use strict';
@@ -339,36 +346,13 @@ import {flatten} from './arrays';
 
     //将嵌套的数组展开
     _.flatten = function (arr, shallow) {
-        console.log(flatten);
         return flatten(arr, shallow, false);
-        //01
-        // var result = [];
-        //
-        // for (var i = 0; i < arr.length; i++) {
-        //     if (Array.isArray(arr[i])) {
-        //         result = result.concat(_.flatten(arr[i]));
-        //     } else {
-        //         result.push(arr[i]);
-        //     }
-        // }
-        // return result;
-
-        //    02
-        // return arr.toString().split(',').map(function (item) {
-        //     return Number(item);
-        // })
-
-        //03
-        // return arr.reduce(function (prev, next) {
-        //     return prev.concat(Array.isArray(next) ? _.flatten(next) : next)
-        // }, [])
-
-        //    04
-        // while (arr.some(item => Array.isArray(item))) {
-        //     arr = [].concat(...arr)
-        // }
-        // return arr;
     };
+    _.findIndex = findIndex;
+    _.findLastIndex = findLastIndex;
+    _.sortedIndex = sortedIndex;
+    _.indexOf = indexOf;
+    _.lastIndexOf = lastIndexOf;
 
     _.union = function () {
         return unique(flatten(arguments, true, true));

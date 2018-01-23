@@ -9,3 +9,13 @@ console.log(_.unique(arr));
 var arr2 = [1, [2, [3, 4]]];
 console.log(_.flatten(arr2, false, true));
 
+var arr3 = [1, 2, 3, 4, 5, 6, 7];
+console.log(_.findIndex(arr3, function (item) {
+    return item === 3;
+}));
+console.log(_.findLastIndex(arr3, function (item) {
+    return item === 3;
+}));
+
+console.log(_.sortedIndex(arr3, 6));
+console.log(_.indexOf(arr3, 3));
