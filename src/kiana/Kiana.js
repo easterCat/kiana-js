@@ -4,7 +4,8 @@ import {
     findLastIndex,
     sortedIndex,
     indexOf,
-    lastIndexOf
+    lastIndexOf,
+    unique
 } from './arrays';
 
 (function () {
@@ -305,48 +306,18 @@ import {
         return throttled;
     };
 
-    /**
-     * 数组去重
-     * @param arr 传入的数组
-     * @param isSorted 判断是否是已经排序过得数组
-     * @param iteratee 迭代函数
-     * @returns {Array}
-     */
-    _.unique = function (arr, isSorted, iteratee) {
-        var res = [];
-        var seen = [];
 
-        if (Array.prototype.filter && !iteratee) {
-            res = arr.filter(function (item, index, own) {
-                return arr.indexOf(item) === index;
-            })
-        } else {
-            for (var i = 0; i < arr.length; i++) {
-                var value = arr[i];
-                var afterValue = iteratee ? iteratee(value, index, arr) : value;
-                if (isSorted) {
-                    if (!i || seen !== afterValue) {
-                        res.push(value);
-                    }
-                    seen = afterValue;
-                } else if (iteratee) {
-                    if (seen.indexOf(afterValue) === -1) {
-                        seen.push(afterValue);
-                        res.push(value);
-                    }
-                } else if (res.indexOf(value) === -1) {
-                    res.push(value);
-                }
-            }
-        }
-
-        return res;
-    };
-
-
+    //数组去重
+    _.uniq = _.unique = unique;
     //将嵌套的数组展开
     _.flatten = function (arr, shallow) {
+        // shallow => 是否只展开一层
+        // false 为 flatten 方法 strict 变量
         return flatten(arr, shallow, false);
+    };
+    //将嵌套数组展开后再进行去重
+    _.union = function () {
+        return _.uniq(flatten(arguments, true, true));
     };
     _.findIndex = findIndex;
     _.findLastIndex = findLastIndex;

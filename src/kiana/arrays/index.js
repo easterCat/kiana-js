@@ -7,5 +7,6 @@ module.exports = {
     findLastIndex: require('./arrays').findLastIndex,
     sortedIndex: require('./arrays').sortedIndex,
     indexOf: require('./arrays').indexOf,
-    lastIndexOf: require('./arrays').lastIndexOf
+    lastIndexOf: require('./arrays').lastIndexOf,
+    unique:require('./arrays').unique
 };

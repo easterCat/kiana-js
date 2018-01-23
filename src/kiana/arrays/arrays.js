@@ -9,37 +9,35 @@ module.exports = {
     findLastIndex: findLastIndex(),
     sortedIndex: sortedIndex,
     indexOf: indexOf(),
-    lastIndexOf: lastIndexOf()
+    lastIndexOf: lastIndexOf(),
+    unique: unique
 };
 
 /**
  * 数组扁平化
+ * _.flatten/
  * @param  {Array} input   要处理的数组
  * @param  {boolean} shallow 是否只扁平一层
  * @param  {boolean} strict  是否严格处理元素，下面有解释
- * @param  {Array} startIndex  开始查找的起始位置
+ * @param  {Number} startIndex  开始查找的起始位置
  * 源码地址：https://github.com/jashkenas/underscore/blob/master/underscore.js#L528
  */
 function flatten(input, shallow, strict, startIndex) {
     // 递归使用的时候会用到output
-    var output = [];
-    var idx = output.length;
+    var output = [], idx = 0;
 
     for (var i = startIndex || 0, length = input.length; i < length; i++) {
         var value = input[i];
         // 数组 或者 arguments，就进行处理
         // if (isArrayLike(value) && (isArray(value) || _.isArguments(value))) {
         if (isArrayLike(value) && (isArray(value))) {
-            // 如果是只扁平一层，遍历该数组，依此填入 output
-            if (shallow) {
-                var j = 0, len = value.length;
-                output.length += len;
-                while (j < len) output[idx++] = value[j++];
-            }
             // 如果是全部扁平就递归，传入已经处理的 output，递归中接着处理 output
-            else {
+            if (!shallow) {
                 value = flatten(value, shallow, strict);
             }
+            var j = 0, len = value.length;
+            output.length += len;
+            while (j < len) output[idx++] = value[j++];
         }
         // 不是数组，根据 strict 的值判断是跳过不处理还是放入 output
         else if (!strict) {
@@ -57,6 +55,63 @@ function findLastIndex(array, callback, context) {
     return _createIndexFinder(-1);
 }
 
+
+function indexOf(array, item) {
+    return _createIndexOfFinder(1, findIndex, sortedIndex);
+}
+
+function lastIndexOf(array, item) {
+    return _createIndexOfFinder(-1, findLastIndex);
+}
+
+/**
+ * 数组去重
+ * @param array 传入的数组
+ * @param isSorted 判断是否是已经排序过得数组
+ * @param iteratee 迭代函数
+ * @returns {Array}
+ */
+function unique(array, isSorted, iteratee) {
+    var res = [];
+    var seen = [];
+
+    for (var i = 0; i < array.length; i++) {
+        var item = array[i];
+        //如果迭代函数存在，就返回操作后的值
+        var computed = iteratee ? iteratee(item, i, array) : item;
+        if (isSorted) {
+            if (!i || seen !== computed) {
+                res.push(item);
+            }
+            seen = computed;
+        } else if (iteratee) {
+            if (seen.indexOf(computed) === -1) {
+                seen.push(computed);
+                res.push(item);
+            }
+        } else if (res.indexOf(item) === -1) {
+            res.push(item);
+        }
+    }
+
+    return res;
+}
+
+function sortedIndex(array, obj, iteratee, context) {
+    iteratee = _cb(iteratee, context);
+    var low = 0;
+    var high = array.length;
+    while (low < high) {
+        var mid = Math.floor((low + high) / 2);
+        if (iteratee(array[mid]) < iteratee(obj)) {
+            low = mid + 1;
+        } else {
+            high = mid;
+        }
+    }
+    return high;
+}
+
 function _createIndexFinder(dir) {
     return function (array, callback, context) {
         var length = array.length;
@@ -69,14 +124,6 @@ function _createIndexFinder(dir) {
         }
         return -1;
     }
-}
-
-function indexOf(array, item) {
-    return _createIndexOfFinder(1, findIndex, sortedIndex);
-}
-
-function lastIndexOf(array, item) {
-    return _createIndexOfFinder(-1, findLastIndex);
 }
 
 function _createIndexOfFinder(dir, predicate, sortedIndex) {
@@ -112,21 +159,6 @@ function _createIndexOfFinder(dir, predicate, sortedIndex) {
         }
         return -1;
     }
-}
-
-function sortedIndex(array, obj, iteratee, context) {
-    iteratee = _cb(iteratee, context);
-    var low = 0;
-    var high = array.length;
-    while (low < high) {
-        var mid = Math.floor((low + high) / 2);
-        if (iteratee(array[mid]) < iteratee(obj)) {
-            low = mid + 1;
-        } else {
-            high = mid;
-        }
-    }
-    return high;
 }
 
 function _cb(fn, context) {
