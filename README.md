@@ -21,7 +21,8 @@ _ _.throttle 节流
 #### 数组
 - _.unique 去重
 - _.getMax
-- _.union
+- _.union 展开后去重
+- _.without
 - _.difference
 - _.flatten 数组展开
 - _.findIndex 查找下标
@@ -31,6 +32,7 @@ _ _.throttle 节流
 - _.lastIndexOf 倒序查找下标
 
 #### 对象
+- _.keys
 - _.isArrayLike 判断类数组对象
 - _.isPlainObject 判断纯对象
 - _.isEqual

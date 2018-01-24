@@ -37,4 +37,7 @@ var obj3 = {
     }
 }
 
-console.log(_.extend(true, obj, obj2, obj3));
+
+console.log(_.pick({name: 'moe', age: 50, userid: 'moe1'}, 'name', 'age'));
+
+

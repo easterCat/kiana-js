@@ -16,7 +16,9 @@ module.exports = {
     isArguments: isArguments,
     isNumber: isNumber,
     isRegExp: isRegExp,
-    isEmpty: isEmpty
+    isEmpty: isEmpty,
+    keys: keys,
+    pick: pick
 };
 
 var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
@@ -36,6 +38,33 @@ function isArray(obj) {
     else return type(obj) === 'array';
 }
 
+/**
+ * 返回一个对象可枚举属性组成的数组
+ * @param obj
+ * @returns {Array}
+ */
+function keys(obj) {
+    if (!isObject(obj)) {
+        return [];
+    }
+    if (Object.keys) {
+        return Object.keys(obj);
+    }
+    var keys = [];
+
+    for (var type in obj) {
+        if (obj.hasOwnProperty(type)) {
+            keys.push(type)
+        }
+    }
+
+    return keys;
+}
+
+/**
+ * 对象合并，将源对象复制到目标对象
+ * @returns {*|{}}
+ */
 function extend() {
     var deep = false;
     var name, options, src, copy, clone, copyIsArray;
@@ -60,32 +89,40 @@ function extend() {
         options = arguments[i];
         if (options !== null) {
             for (name in options) {
-                src = target[name];// 要复制的对象的属性值
-                copy = options[name];// 要复制的对象的属性值
+                if (options.hasOwnProperty(name)) {
+                    src = target[name];// 要复制的对象的属性值
+                    copy = options[name];// 要复制的对象的属性值
 
-                // 解决循环引用
-                if (target === copy) {
-                    continue;
-                }
-
-                // 要递归的对象必须是 plainObject 或者数组
-                if (deep && copy && (isPlainObject(copy) ||
-                    (copyIsArray = Array.isArray(copy)))) {
-                    if (copyIsArray) {
-                        copyIsArray = false;
-                        clone = src && Array.isArray(src) ? src : [];
-                    } else {
-                        clone = src && isPlainObject(src) ? src : {};
+                    // 解决循环引用
+                    if (target === copy) {
+                        continue;
                     }
-                    target[name] = extend(deep, clone, copy);
-                } else if (copy !== undefined) {
-                    target[name] = copy;
+
+                    // 要递归的对象必须是 plainObject 或者数组
+                    if (deep && copy && (isPlainObject(copy) ||
+                        (copyIsArray = Array.isArray(copy)))) {
+                        if (copyIsArray) {
+                            copyIsArray = false;
+                            clone = src && Array.isArray(src) ? src : [];
+                        } else {
+                            clone = src && isPlainObject(src) ? src : {};
+                        }
+                        target[name] = extend(deep, clone, copy);
+                    } else if (copy !== undefined) {
+                        target[name] = copy;
+                    }
                 }
             }
         }
     }
     return target;
 }
+
+
+function pick() {
+
+}
+
 
 /**
  * 判断是否为 DOM 元素
@@ -98,14 +135,6 @@ function isElement(obj) {
     return !!(obj && obj.nodeType === 1);
 }
 
-/**
- * 判断是否为对象,这里的对象包括 function 和 object
- * @param obj
- * @returns {boolean}
- */
-function isObject(obj) {
-    return type(obj) === 'object';
-}
 
 function isPlainObject(obj) {
     var proto, Ctor, newobj = {};
@@ -129,6 +158,15 @@ function isPlainObject(obj) {
     Ctor = newobj.hasOwnProperty.call(proto, 'constructor') && proto.constructor;
     // 在这里判断 Ctor 构造函数是不是 Object 构造函数，用于区分自定义构造函数和 Object 构造函数
     return typeof Ctor === "function" && newobj.hasOwnProperty.toString.call(Ctor) === newobj.hasOwnProperty.toString.call(Object);
+}
+
+/**
+ * 判断是否为对象,这里的对象包括 function 和 object
+ * @param obj
+ * @returns {boolean}
+ */
+function isObject(obj) {
+    return _type(obj) === 'object';
 }
 
 function isEmpty(obj) {

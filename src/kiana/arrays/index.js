@@ -8,5 +8,7 @@ module.exports = {
     sortedIndex: require('./arrays').sortedIndex,
     indexOf: require('./arrays').indexOf,
     lastIndexOf: require('./arrays').lastIndexOf,
-    unique:require('./arrays').unique
+    unique: require('./arrays').unique,
+    difference: require('./arrays').difference,
+    without: require('./arrays').without
 };

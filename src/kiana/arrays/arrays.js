@@ -10,7 +10,9 @@ module.exports = {
     sortedIndex: sortedIndex,
     indexOf: indexOf(),
     lastIndexOf: lastIndexOf(),
-    unique: unique
+    unique: unique,
+    difference: difference,
+    without: without
 };
 
 /**
@@ -45,6 +47,25 @@ function flatten(input, shallow, strict, startIndex) {
         }
     }
     return output;
+}
+
+/**
+ * 返回一个删除所有指定值后的 array副本
+ * @param array
+ * @returns {*}
+ */
+function without(array) {
+    // slice.call(arguments, 1)将 arguments 转为数组（同时去掉第一个元素）
+    // 之后便可以调用 _.difference 方法
+    return difference(array, Array.prototype.slice.call(arguments, 1));
+}
+
+function difference(array) {
+    //将参数数组展开一层
+    var rest = flatten(arguments, true, true, 1);
+    return array.filter(function (item) {
+        return rest.indexOf(item) === -1;
+    })
 }
 
 function findIndex(array, callback, context) {
@@ -111,6 +132,7 @@ function sortedIndex(array, obj, iteratee, context) {
     }
     return high;
 }
+
 
 function _createIndexFinder(dir) {
     return function (array, callback, context) {

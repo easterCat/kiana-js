@@ -16,5 +16,7 @@ module.exports = {
     isArguments: require('./objects').isArguments,
     isNumber: require('./objects').isNumber,
     isRegExp: require('./objects').isRegExp,
-    isEmpty: require('./objects').isEmpty
+    isEmpty: require('./objects').isEmpty,
+    keys: require('./objects').keys,
+    pick: require('./objects').pick
 };

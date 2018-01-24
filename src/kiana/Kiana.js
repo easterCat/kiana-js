@@ -1,14 +1,17 @@
 import {
+    difference,
     flatten,
     findIndex,
     findLastIndex,
     sortedIndex,
     indexOf,
     lastIndexOf,
-    unique
+    unique,
+    without
 } from './arrays';
 
 import {
+    keys,
     extend,
     isElement,
     isArray,
@@ -22,7 +25,8 @@ import {
     isArguments,
     isNumber,
     isRegExp,
-    isEmpty
+    isEmpty,
+    pick
 } from './objects';
 
 import {
@@ -144,9 +148,10 @@ import {
     };
 
 
-    /**
-     * 遍历相应的数据创建对应的类型判断
-     */
+    //对象
+    _.keys = keys;
+    _.extend = extend;
+    _.pick = pick;
     _.isEmpty = isEmpty;
     _.isElement = isElement;
     _.isArray = isArray;
@@ -171,35 +176,22 @@ import {
     _.debounce = debounce;
     _.throttle = throttle;
 
-    //数组去重
+    //数组
     _.uniq = _.unique = unique;
-    //将嵌套的数组展开
     _.flatten = function (arr, shallow) {
-        // shallow => 是否只展开一层
-        // false 为 flatten 方法 strict 变量
         return flatten(arr, shallow, false);
     };
-    //将嵌套数组展开后再进行去重
     _.union = function () {
-        return _.uniq(flatten(arguments, true, true));
+        return _.uniq(flatten(arguments, true, true))
     };
     _.findIndex = findIndex;
     _.findLastIndex = findLastIndex;
     _.sortedIndex = sortedIndex;
     _.indexOf = indexOf;
     _.lastIndexOf = lastIndexOf;
-    _.difference = function () {
+    _.difference = difference;
+    _.without = without;
 
-    };
-
-    // function difference(array,...rest){
-    //     rest = flatten(rest, true, true);
-    //     return array.filter(function (item) {
-    //         return rest.indexOf(item) === -1;
-    //     })
-    // }
-
-    _.extend = extend;
 
     _.property = function (path) {
         if (!_.isArray(path)) {
