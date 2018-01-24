@@ -19,3 +19,22 @@ console.log(_.findLastIndex(arr3, function (item) {
 
 console.log(_.sortedIndex(arr3, 6));
 console.log(_.indexOf(arr3, 3));
+
+var obj = {
+    a: {
+        y: 3
+    }
+};
+
+var obj2 = {
+    c: 3
+}
+
+var obj3 = {
+    d: 5,
+    a: {
+        u: 3
+    }
+}
+
+console.log(_.extend(true, obj, obj2, obj3));
