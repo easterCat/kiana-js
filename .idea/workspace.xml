@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18b69af1-7d2d-4cf7-8b96-499da6954bd0" name="Default" comment="2018-1-24">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/index.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alias/lodash.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/Kiana.html" afterPath="$PROJECT_DIR$/example/Kiana.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alias/ud.js" afterPath="$PROJECT_DIR$/src/alias/ud.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kiana/Kiana.js" afterPath="$PROJECT_DIR$/src/kiana/Kiana.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kiana/arrays/arrays.js" afterPath="$PROJECT_DIR$/src/kiana/arrays/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kiana/functions/functions.js" afterPath="$PROJECT_DIR$/src/kiana/functions/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/kiana/objects/objects.js" afterPath="$PROJECT_DIR$/src/kiana/objects/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,18 +22,18 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="237">
+              <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kiana.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/Kiana.html">
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="417">
+              <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -118,7 +109,6 @@
         <option value="$PROJECT_DIR$/src/kiana/arrays.js" />
         <option value="$PROJECT_DIR$/src/kiana/arrays/flatten.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/kiana/functions/index.js" />
         <option value="$PROJECT_DIR$/src/kiana/functions/functions.js" />
@@ -131,8 +121,9 @@
         <option value="$PROJECT_DIR$/src/kiana/arrays/index.js" />
         <option value="$PROJECT_DIR$/example/index.js" />
         <option value="$PROJECT_DIR$/src/alias/lodash.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/example/Kiana.html" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
       </list>
     </option>
   </component>
@@ -195,52 +186,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easter_utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easter_utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kiana" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easter_utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easter_utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easter_utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easter_utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -386,7 +331,7 @@
       <workItem from="1516606139170" duration="5733000" />
       <workItem from="1516686323756" duration="14179000" />
       <workItem from="1516774449217" duration="9955000" />
-      <workItem from="1516860416344" duration="9589000" />
+      <workItem from="1516860416344" duration="10337000" />
     </task>
     <task id="LOCAL-00001" summary="2018-1-11">
       <created>1515665601654</created>
@@ -420,7 +365,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105583000" />
+    <option name="totallyTimeSpent" value="106331000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -470,7 +415,7 @@
         <state relative-caret-position="5910">
           <caret line="197" column="6" lean-forward="true" selection-start-line="197" selection-start-column="6" selection-end-line="197" selection-end-column="6" />
           <folding>
-            <element signature="e#0#179#0" expanded="true" />
+            <element signature="e#0#179#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -504,7 +449,7 @@
         <state relative-caret-position="10560">
           <caret line="352" column="6" lean-forward="false" selection-start-line="352" selection-start-column="6" selection-end-line="352" selection-end-column="6" />
           <folding>
-            <element signature="e#0#179#0" expanded="true" />
+            <element signature="e#0#179#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -546,7 +491,7 @@
         <state relative-caret-position="3180">
           <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding>
-            <element signature="e#0#179#0" expanded="true" />
+            <element signature="e#0#179#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -556,7 +501,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#179#0" expanded="true" />
+            <element signature="e#0#179#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -566,7 +511,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#179#0" expanded="true" />
+            <element signature="e#0#179#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -693,14 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/src/kiana/Kiana.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -809,20 +746,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kiana/Kiana.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
           <folding>
-            <element signature="e#0#179#0" expanded="true" />
+            <element signature="e#0#179#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,6 +760,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
           <folding />
         </state>
       </provider>
