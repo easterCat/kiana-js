@@ -7,11 +7,14 @@ import {
     indexOf,
     lastIndexOf,
     unique,
-    without
+    without,
+    max,
+    min
 } from './arrays';
 
 import {
     keys,
+    values,
     extend,
     isElement,
     isArray,
@@ -150,6 +153,7 @@ import {
 
     //对象
     _.keys = keys;
+    _.values = values;
     _.extend = extend;
     _.pick = pick;
     _.isEmpty = isEmpty;
@@ -177,6 +181,8 @@ import {
     _.throttle = throttle;
 
     //数组
+    _.max = max;
+    _.min = min;
     _.uniq = _.unique = unique;
     _.flatten = function (arr, shallow) {
         return flatten(arr, shallow, false);
@@ -191,7 +197,6 @@ import {
     _.lastIndexOf = lastIndexOf;
     _.difference = difference;
     _.without = without;
-
 
     _.property = function (path) {
         if (!_.isArray(path)) {
@@ -239,20 +244,6 @@ import {
 
     _.identity = function (value) {
         return value;
-    };
-
-
-    /**
-     * 获取数组中最大值
-     * @param arr
-     * @returns {*}
-     */
-    _.getMax = function (arr) {
-        var max = arr[0];
-        arr.forEach(function (item) {
-            if (max < item) max = item;
-        });
-        return max;
     };
 
 

@@ -550,18 +550,18 @@
         return _.filter(obj, _.matcher(attrs));
     };
 
+    // Return the maximum element (or element-based computation).
+    // 寻找数组中的最大元素
+    // 或者对象中的最大 value 值
+    // 如果有 iteratee 参数，则求每个元素经过该函数迭代后的最值
+    // _.max(list, [iteratee], [context])
+
     // Convenience version of a common use case of `find`: getting the first object
     // containing specific `key:value` pairs.
     // 寻找第一个有指定 key-value 键值对的对象
     _.findWhere = function (obj, attrs) {
         return _.find(obj, _.matcher(attrs));
     };
-
-    // Return the maximum element (or element-based computation).
-    // 寻找数组中的最大元素
-    // 或者对象中的最大 value 值
-    // 如果有 iteratee 参数，则求每个元素经过该函数迭代后的最值
-    // _.max(list, [iteratee], [context])
     _.max = function (obj, iteratee, context) {
         var result = -Infinity, lastComputed = -Infinity,
             value, computed;

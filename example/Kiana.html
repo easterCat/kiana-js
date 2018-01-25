@@ -14,19 +14,18 @@
             font-size: 30px;
         }
     </style>
-    <script src="../dist/Kiana.js"></script>
+
 
 </head>
 <body>
 <div id="container"></div>
 </body>
+<script src="./index.js"></script>
 <script>
-    window.onload = function () {
-        var arr = [11, 22, 11, 3, 4, 5, 4, 3, 22, 11];
-        console.log(_.unique(arr));
+    var arr = [11, 22, 11, 3, 4, 5, 4, 3, 22, 11];
+    console.log(_.throttle);
 
-        var arr2 = [1, [2, [3, 4]]];
-        console.log(_.flatten(arr2, false, true));
-    }
+    var arr2 = [1, [2, [3, 4]]];
+    console.log(_.flatten(arr2, false, true));
 </script>
 </html>
