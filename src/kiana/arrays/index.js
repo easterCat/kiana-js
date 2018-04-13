@@ -4,19 +4,19 @@ import {
     values,
 } from '../objects/index';
 
-module.exports = {
-    flatten: flatten,
-    findIndex: findIndex(),
-    findLastIndex: findLastIndex(),
-    sortedIndex: sortedIndex,
-    indexOf: indexOf(),
-    lastIndexOf: lastIndexOf(),
-    unique: unique,
-    difference: difference,
-    without: without,
-    max: max,
-    min: min
-};
+export {
+    flatten,
+    findIndex,
+    findLastIndex,
+    sortedIndex,
+    indexOf,
+    lastIndexOf,
+    unique,
+    difference,
+    without,
+    max,
+    min
+}
 
 /**
  * 数组扁平化

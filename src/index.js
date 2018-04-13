@@ -1,3 +1,3 @@
 import './index.html';
-const _ = require('./kiana/Kiana');
-window._ = _;
+import _ from './kiana/Kiana';
+

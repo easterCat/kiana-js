@@ -70,31 +70,34 @@
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /**
  * Created by easterCat on 2018/1/22.
  */
-module.exports = {
-    isArrayLike: isArrayLike,
-    isArray: isArray,
-    extend: extend,
-    isElement: isElement,
-    isObject: isObject,
-    isPlainObject: isPlainObject,
-    isWindow: isWindow,
-    isFunction: isFunction,
-    isDate: isDate,
-    isError: isError,
-    isString: isString,
-    isArguments: isArguments,
-    isNumber: isNumber,
-    isRegExp: isRegExp,
-    isEmpty: isEmpty,
-    keys: keys,
-    values: values,
-    pick: pick
-};
+exports.isArrayLike = isArrayLike;
+exports.isArray = isArray;
+exports.extend = extend;
+exports.isElement = isElement;
+exports.isObject = isObject;
+exports.isPlainObject = isPlainObject;
+exports.isWindow = isWindow;
+exports.isFunction = isFunction;
+exports.isDate = isDate;
+exports.isError = isError;
+exports.isString = isString;
+exports.isArguments = isArguments;
+exports.isNumber = isNumber;
+exports.isRegExp = isRegExp;
+exports.isEmpty = isEmpty;
+exports.keys = keys;
+exports.values = values;
+exports.pick = pick;
+
 
 var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
 
@@ -316,8 +319,11 @@ function _type(obj) {
 
 __webpack_require__(2);
 
-var _ = __webpack_require__(3);
-window._ = _;
+var _Kiana = __webpack_require__(3);
+
+var _Kiana2 = _interopRequireDefault(_Kiana);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
 /* 2 */
@@ -646,21 +652,24 @@ module.exports = function(module) {
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.min = exports.max = exports.without = exports.difference = exports.unique = exports.lastIndexOf = exports.indexOf = exports.sortedIndex = exports.findLastIndex = exports.findIndex = exports.flatten = undefined;
+
 var _index = __webpack_require__(0);
 
-module.exports = {
-    flatten: flatten,
-    findIndex: findIndex(),
-    findLastIndex: findLastIndex(),
-    sortedIndex: sortedIndex,
-    indexOf: indexOf(),
-    lastIndexOf: lastIndexOf(),
-    unique: unique,
-    difference: difference,
-    without: without,
-    max: max,
-    min: min
-};
+exports.flatten = flatten;
+exports.findIndex = findIndex;
+exports.findLastIndex = findLastIndex;
+exports.sortedIndex = sortedIndex;
+exports.indexOf = indexOf;
+exports.lastIndexOf = lastIndexOf;
+exports.unique = unique;
+exports.difference = difference;
+exports.without = without;
+exports.max = max;
+exports.min = min;
 
 /**
  * 数组扁平化
@@ -671,6 +680,7 @@ module.exports = {
  * @param  {Number} startIndex  开始查找的起始位置
  * 源码地址：https://github.com/jashkenas/underscore/blob/master/underscore.js#L528
  */
+
 function flatten(input, shallow, strict, startIndex) {
     // 递归使用的时候会用到output
     var output = [],
@@ -927,13 +937,14 @@ function _cb(fn, context) {
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 /**
  * Created by easterCat on 2018/1/24.
  */
-module.exports = {
-    debounce: debounce,
-    throttle: throttle
-};
+exports.debounce = debounce;
+exports.throttle = throttle;
 
 /**
  * 函数防抖
@@ -942,6 +953,7 @@ module.exports = {
  * @param immediate
  * @returns {debounced}
  */
+
 function debounce(func, wait, immediate) {
     var timeout, result;
     var debounced = function debounced() {
