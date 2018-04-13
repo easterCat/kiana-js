@@ -4,20 +4,6 @@ import {
     values,
 } from '../objects/index';
 
-module.exports =  {
-    flatten,
-    findIndex,
-    findLastIndex,
-    sortedIndex,
-    indexOf,
-    lastIndexOf,
-    unique,
-    difference,
-    without,
-    max,
-    min
-}
-
 /**
  * 数组扁平化
  * _.flatten/

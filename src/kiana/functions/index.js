@@ -2,11 +2,6 @@
  * Created by easterCat on 2018/1/24.
  */
 
-module.exports = {
-    debounce,
-    throttle
-};
-
 /**
  * 函数防抖
  * @param func

@@ -1,26 +1,6 @@
 /**
  * Created by easterCat on 2018/1/22.
  */
-module.exports =  {
-    isArrayLike,
-    isArray,
-    extend,
-    isElement,
-    isObject,
-    isPlainObject,
-    isWindow,
-    isFunction,
-    isDate,
-    isError,
-    isString,
-    isArguments,
-    isNumber,
-    isRegExp,
-    isEmpty,
-    keys,
-    values,
-    pick
-};
 
 var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
 
