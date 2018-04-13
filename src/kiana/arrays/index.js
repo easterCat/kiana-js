@@ -4,7 +4,7 @@ import {
     values,
 } from '../objects/index';
 
-export {
+module.exports =  {
     flatten,
     findIndex,
     findLastIndex,

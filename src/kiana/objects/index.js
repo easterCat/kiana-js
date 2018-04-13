@@ -1,7 +1,7 @@
 /**
  * Created by easterCat on 2018/1/22.
  */
-export {
+module.exports =  {
     isArrayLike,
     isArray,
     extend,

@@ -1,7 +1,7 @@
 /**
  * Created by easterCat on 2018/1/24.
  */
-export {
+module.exports = {
     debounce,
     throttle
 }
