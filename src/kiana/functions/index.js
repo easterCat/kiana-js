@@ -1,10 +1,11 @@
 /**
  * Created by easterCat on 2018/1/24.
  */
+
 module.exports = {
     debounce,
     throttle
-}
+};
 
 /**
  * 函数防抖
@@ -13,7 +14,7 @@ module.exports = {
  * @param immediate
  * @returns {debounced}
  */
-function debounce(func, wait, immediate) {
+export function debounce(func, wait, immediate) {
     var timeout, result;
     var debounced = function () {
         var context = this;
@@ -50,7 +51,7 @@ function debounce(func, wait, immediate) {
  * @param options leading:false禁用第一次执行,trailing: false 禁用结束后再执行一次
  * @returns {throttled}
  */
-function throttle(func, wait, options) {
+export function throttle(func, wait, options) {
     var timeout, context, args, result;
     var previous_time = 0;
     if (!options) options = {};
