@@ -286,5 +286,4 @@ import {
     _.prototype.toStrings = function () {
         return '' + this._wrapped;
     }
-
 })();

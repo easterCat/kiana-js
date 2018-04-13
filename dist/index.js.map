@@ -1,0 +1,1 @@
+{"version":3,"sources":["../index.js"],"names":["_","require","window"],"mappings":";;AAAA;;;AAGA,IAAMA,IAAIC,QAAQ,mBAAR,CAAV;AACAC,OAAOF,CAAP,GAAWA,CAAX","file":"index.js","sourcesContent":["/**\r\n * Created by easterCat on 2018/4/13.\r\n */\r\nconst _ = require('./src/kiana/Kiana');\r\nwindow._ = _;"]}

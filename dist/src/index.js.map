@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/index.js"],"names":["_","require","window"],"mappings":";;AAAA;;AACA,IAAMA,IAAIC,QAAQ,eAAR,CAAV;AACAC,OAAOF,CAAP,GAAWA,CAAX","file":"index.js","sourcesContent":["import './index.html';\r\nconst _ = require('./kiana/Kiana');\r\nwindow._ = _;\r\n"]}
