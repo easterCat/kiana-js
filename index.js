@@ -2,42 +2,10 @@
  * Created by easterCat on 2018/4/13.
  */
 
-export {
-    flatten,
-    findIndex,
-    findLastIndex,
-    sortedIndex,
-    indexOf,
-    lastIndexOf,
-    unique,
-    difference,
-    without,
-    max,
-    min
-} from './src/kiana/arrays'
+import * as arr from './src/kiana/arrays'
+import * as func from './src/kiana/functions'
+import * as obj from './src/kiana/objects'
 
-export {
-    debounce,
-    throttle
-} from './src/kiana/functions'
+let kiana = Object.assign({}, arr, func, obj)
 
-export {
-    isArrayLike,
-    isArray,
-    extend,
-    isElement,
-    isObject,
-    isPlainObject,
-    isWindow,
-    isFunction,
-    isDate,
-    isError,
-    isString,
-    isArguments,
-    isNumber,
-    isRegExp,
-    isEmpty,
-    keys,
-    values,
-    pick
-} from './src/kiana/objects'
+export default kiana
