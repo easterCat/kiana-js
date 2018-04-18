@@ -4,6 +4,20 @@ import {
     values,
 } from '../objects/index';
 
+export {
+    difference,
+    flatten,
+    findIndex,
+    findLastIndex,
+    sortedIndex,
+    indexOf,
+    lastIndexOf,
+    unique,
+    without,
+    max,
+    min
+}
+
 /**
  * 数组扁平化
  * _.flatten/
@@ -13,7 +27,7 @@ import {
  * @param  {Number} startIndex  开始查找的起始位置
  * 源码地址：https://github.com/jashkenas/underscore/blob/master/underscore.js#L528
  */
-export function flatten(input, shallow, strict, startIndex) {
+function flatten(input, shallow, strict, startIndex) {
     // 递归使用的时候会用到output
     var output = [], idx = 0;
 
@@ -43,13 +57,13 @@ export function flatten(input, shallow, strict, startIndex) {
  * @param array
  * @returns {*}
  */
-export function without(array) {
+function without(array) {
     // slice.call(arguments, 1)将 arguments 转为数组（同时去掉第一个元素）
     // 之后便可以调用 _.difference 方法
     return difference(array, Array.prototype.slice.call(arguments, 1));
 }
 
-export function difference(array) {
+function difference(array) {
     //将参数数组展开一层
     var rest = flatten(arguments, true, true, 1);
     return array.filter(function (item) {
@@ -64,7 +78,7 @@ export function difference(array) {
  * @param iteratee 迭代函数
  * @returns {Array}
  */
-export function unique(array, isSorted, iteratee) {
+function unique(array, isSorted, iteratee) {
     var res = [];
     var seen = [];
 
@@ -98,7 +112,7 @@ export function unique(array, isSorted, iteratee) {
  * @param context
  * @returns {number}
  */
-export function max(obj, iteratee, context) {
+function max(obj, iteratee, context) {
     var result = -Infinity,
         computed,
         lastComputed = -Infinity,
@@ -140,7 +154,7 @@ export function max(obj, iteratee, context) {
  * @param context
  * @returns {Number}
  */
-export function min(obj, iteratee, context) {
+function min(obj, iteratee, context) {
     var result = Infinity, item, computed, lastComputed = Infinity;
 
     if (!iteratee && obj) {
@@ -170,25 +184,25 @@ export function min(obj, iteratee, context) {
     return result;
 }
 
-export function findIndex(array, callback, context) {
+function findIndex(array, callback, context) {
     return _createIndexFinder(1);
 }
 
-export function findLastIndex(array, callback, context) {
+function findLastIndex(array, callback, context) {
     return _createIndexFinder(-1);
 }
 
 
-export function indexOf(array, item) {
+function indexOf(array, item) {
     return _createIndexOfFinder(1, findIndex, sortedIndex);
 }
 
-export function lastIndexOf(array, item) {
+function lastIndexOf(array, item) {
     return _createIndexOfFinder(-1, findLastIndex);
 }
 
 
-export function sortedIndex(array, obj, iteratee, context) {
+function sortedIndex(array, obj, iteratee, context) {
     iteratee = _cb(iteratee, context);
     var low = 0;
     var high = array.length;
@@ -204,7 +218,7 @@ export function sortedIndex(array, obj, iteratee, context) {
 }
 
 
-export function _createIndexFinder(dir) {
+function _createIndexFinder(dir) {
     return function (array, callback, context) {
         var length = array.length;
         var index = dir > 0 ? 0 : length - 1;
@@ -218,7 +232,7 @@ export function _createIndexFinder(dir) {
     }
 }
 
-export function _createIndexOfFinder(dir, predicate, sortedIndex) {
+function _createIndexOfFinder(dir, predicate, sortedIndex) {
     //idx设定开始查找的位置
     return function (array, item, idx) {
         var length = array.length;
@@ -253,7 +267,7 @@ export function _createIndexOfFinder(dir, predicate, sortedIndex) {
     }
 }
 
-export function _cb(fn, context) {
+function _cb(fn, context) {
     return function (arg) {
         //如果回调函数存在，则执行回调函数，并且将传入的参数当做参数传入回调函数
         //如果回调函数不存在，则直接将传入的参数返回，什么也不做

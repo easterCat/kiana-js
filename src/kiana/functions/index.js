@@ -2,6 +2,11 @@
  * Created by easterCat on 2018/1/24.
  */
 
+export {
+    debounce,
+    throttle
+}
+
 /**
  * 函数防抖
  * @param func
@@ -9,7 +14,7 @@
  * @param immediate
  * @returns {debounced}
  */
-export function debounce(func, wait, immediate) {
+function debounce(func, wait, immediate) {
     var timeout, result;
     var debounced = function () {
         var context = this;
@@ -46,7 +51,7 @@ export function debounce(func, wait, immediate) {
  * @param options leading:false禁用第一次执行,trailing: false 禁用结束后再执行一次
  * @returns {throttled}
  */
-export function throttle(func, wait, options) {
+function throttle(func, wait, options) {
     var timeout, context, args, result;
     var previous_time = 0;
     if (!options) options = {};

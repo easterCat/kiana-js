@@ -4,7 +4,27 @@
 
 var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
 
-export function isArrayLike(collection) {
+export {
+    keys,
+    values,
+    extend,
+    isElement,
+    isArray,
+    isObject,
+    isPlainObject,
+    isWindow,
+    isFunction,
+    isDate,
+    isError,
+    isString,
+    isArguments,
+    isNumber,
+    isRegExp,
+    isEmpty,
+    pick
+}
+
+function isArrayLike(collection) {
     var length = collection.length;
     return typeof length === 'number' && length >= 0 && length <= MAX_ARRAY_INDEX;
 }
@@ -14,7 +34,7 @@ export function isArrayLike(collection) {
  * @param obj
  * @returns {boolean}
  */
-export function isArray(obj) {
+function isArray(obj) {
     if (Array.isArray) return Array.isArray(obj);
     else return type(obj) === 'array';
 }
@@ -24,7 +44,7 @@ export function isArray(obj) {
  * @param obj
  * @returns {Array}
  */
-export function keys(obj) {
+function keys(obj) {
     if (!isObject(obj)) {
         return [];
     }
@@ -42,7 +62,7 @@ export function keys(obj) {
     return keys;
 }
 
-export function values(obj) {
+function values(obj) {
     if (isObject(obj)) {
         if (Object.values) {
             return Object.values(obj);
@@ -66,7 +86,7 @@ export function values(obj) {
  * 对象合并，将源对象复制到目标对象
  * @returns {*|{}}
  */
-export function extend() {
+function extend() {
     var deep = false;
     var name, options, src, copy, clone, copyIsArray;
     var length = arguments.length;
@@ -119,8 +139,7 @@ export function extend() {
     return target;
 }
 
-
-export function pick() {
+function pick() {
 
 }
 
@@ -130,14 +149,14 @@ export function pick() {
  * @param obj
  * @returns {boolean}
  */
-export function isElement(obj) {
+function isElement(obj) {
     // 确保 obj 不是 null, undefined 等假值
     // 并且 obj.nodeType === 1
     return !!(obj && obj.nodeType === 1);
 }
 
 
-export function isPlainObject(obj) {
+function isPlainObject(obj) {
     var proto, Ctor, newobj = {};
     // 排除掉明显不是obj的以及一些宿主对象如Window
     if (!obj || Object.prototype.toString.call(obj) !== '[object Object]') {
@@ -166,33 +185,33 @@ export function isPlainObject(obj) {
  * @param obj
  * @returns {boolean}
  */
-export function isObject(obj) {
+function isObject(obj) {
     return _type(obj) === 'object';
 }
 
-export function isEmpty(obj) {
+function isEmpty(obj) {
     return !!(obj && obj.nodeType === 1);
 }
 
-export function isFunction(obj) {
+function isFunction(obj) {
     return _type(obj) === /**/'function';
 }
-export function isDate(obj) {
+function isDate(obj) {
     return _type(obj) === 'date';
 }
-export function isError(obj) {
+function isError(obj) {
     return _type(obj) === 'error';
 }
-export function isString(obj) {
+function isString(obj) {
     return _type(obj) === 'string';
 }
-export function isArguments(obj) {
+function isArguments(obj) {
     return _type(obj) === 'arguments';
 }
-export function isNumber(obj) {
+function isNumber(obj) {
     return _type(obj) === 'number';
 }
-export function isRegExp(obj) {
+function isRegExp(obj) {
     return _type(obj) === 'regexp';
 }
 
@@ -200,7 +219,7 @@ export function isRegExp(obj) {
  * Window 对象作为客户端 JavaScript 的全局对象，它有一个 window 属性指向自身
  * @param obj
  */
-export function isWindow(obj) {
+function isWindow(obj) {
     //如果ibj有一个window属性指向自身，说明是window对象
     return obj !== null && obj === obj.window
 }
