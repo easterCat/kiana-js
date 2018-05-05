@@ -1,27 +1,26 @@
-#### underscore
-- optimizeCb
-- cb
-- _.iteratee
-- _.each
-- _.matcher
-- _.property
-- shallowProperty
-- deepGet
-- _.reverse
-- _.map
-- _.identity
-- _.getMax
-- result
-- _.mixin
+#### 集合
+
+#### 数组
+- _.max 获取数组最大值
+- _.min 获取数组最小值
+- _.unique 去重
+- _.union 展开后去重
+- _.without
+- _.difference
+- _.flatten 数组展开
+- _.findIndex 查找下标
+- _.findLastIndex 从后查找第一次出现的下标
+- _.sortedIndex 排序后的下标
+- _.indexOf 查找下标
+- _.lastIndexOf 倒序查找下标
 
 #### 函数
 - _.debounce 防抖
 _ _.throttle 节流
 
-#### 数组
-- _.unique 去重
-
 #### 对象
+- _.extend 拷贝
+- _.keys
 - _.isArrayLike 判断类数组对象
 - _.isPlainObject 判断纯对象
 - _.isEqual
@@ -41,6 +40,22 @@ _ _.throttle 节流
 
 #### 工具
 - type 类型判断
+- property
+- getLength
+- optimizeCb
+- cb
+- _.iteratee
+- _.each
+- _.matcher
+- _.property
+- shallowProperty
+- deepGet
+- _.reverse
+- _.map
+- _.identity
+- _.getMax
+- result
+- _.mixin
 
 #### 链式
 - _.chain
