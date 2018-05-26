@@ -5,6 +5,6 @@ import * as arr from './arrays'
 import * as func from './functions'
 import * as obj from './objects'
 
-let kiana = Object.assign({}, arr, func, obj)
+let kiana = Object.assign({}, arr, func, obj);
 
-export default kiana
+exports.default = kiana;
