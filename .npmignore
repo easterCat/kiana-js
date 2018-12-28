@@ -10,3 +10,9 @@ test
 package-lock.json
 tsconfig.json
 tslint.json
+.project
+DOC.md
+README.md
+rollup.config.js
+webpack.config.js
+karma.conf.js
