@@ -1,6 +1,6 @@
 {
   "name": "kiana-js",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "- optimizeCb\r - cb\r - _.iteratee\r - _.each\r - _.matcher\r - _.property\r - shallowProperty\r - deepGet\r - _.reverse\r - _.map\r - _.identity\r - _.getMax\r - result\r - _.mixin",
   "main": "index.js",
   "scripts": {
@@ -41,8 +41,6 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-  },
-  "files": [
-    "index.js"
-  ]
+    "ypkgfiles": "^1.6.0"
+  }
 }

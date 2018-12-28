@@ -1,4 +1,12 @@
-node_modules/
-alias/
-example/
-test/
+alias
+example
+node_modules
+config
+demo
+test
+.babelrc
+.editorconfig
+.eslintrc.js
+package-lock.json
+tsconfig.json
+tslint.json
