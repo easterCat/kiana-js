@@ -1,23 +1,22 @@
-'use strict';
+import {
+    isArrayLike,
+    isArray,
+    values,
+} from '../objects/index';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.min = exports.max = exports.without = exports.unique = exports.lastIndexOf = exports.indexOf = exports.sortedIndex = exports.findLastIndex = exports.findIndex = exports.flatten = exports.difference = undefined;
-
-var _index = require('../objects/index');
-
-exports.difference = difference;
-exports.flatten = flatten;
-exports.findIndex = findIndex;
-exports.findLastIndex = findLastIndex;
-exports.sortedIndex = sortedIndex;
-exports.indexOf = indexOf;
-exports.lastIndexOf = lastIndexOf;
-exports.unique = unique;
-exports.without = without;
-exports.max = max;
-exports.min = min;
+export {
+    difference,
+    flatten,
+    findIndex,
+    findLastIndex,
+    sortedIndex,
+    indexOf,
+    lastIndexOf,
+    unique,
+    without,
+    max,
+    min
+}
 
 /**
  * 数组扁平化
@@ -28,32 +27,27 @@ exports.min = min;
  * @param  {Number} startIndex  开始查找的起始位置
  * 源码地址：https://github.com/jashkenas/underscore/blob/master/underscore.js#L528
  */
-
 function flatten(input, shallow, strict, startIndex) {
     // 递归使用的时候会用到output
-    var output = [],
-        idx = 0;
+    var output = [], idx = 0;
 
     for (var i = startIndex || 0, length = input.length; i < length; i++) {
         var value = input[i];
         // 数组 或者 arguments，就进行处理
         // if (isArrayLike(value) && (isArray(value) || _.isArguments(value))) {
-        if ((0, _index.isArrayLike)(value) && (0, _index.isArray)(value)) {
+        if (isArrayLike(value) && (isArray(value))) {
             // 如果是全部扁平就递归，传入已经处理的 output，递归中接着处理 output
             if (!shallow) {
                 value = flatten(value, shallow, strict);
             }
-            var j = 0,
-                len = value.length;
+            var j = 0, len = value.length;
             output.length += len;
-            while (j < len) {
-                output[idx++] = value[j++];
-            }
+            while (j < len) output[idx++] = value[j++];
         }
         // 不是数组，根据 strict 的值判断是跳过不处理还是放入 output
         else if (!strict) {
-                output[idx++] = value;
-            }
+            output[idx++] = value;
+        }
     }
     return output;
 }
@@ -74,7 +68,7 @@ function difference(array) {
     var rest = flatten(arguments, true, true, 1);
     return array.filter(function (item) {
         return rest.indexOf(item) === -1;
-    });
+    })
 }
 
 /**
@@ -110,6 +104,7 @@ function unique(array, isSorted, iteratee) {
     return res;
 }
 
+
 /**
  * 获取数组中最大值
  * @param obj 传入的数组或对象
@@ -125,7 +120,7 @@ function max(obj, iteratee, context) {
 
     //如果只是传入数组或对象，没有迭代函数，则正常比较
     if (!iteratee && obj) {
-        obj = (0, _index.isArrayLike)(obj) ? obj : (0, _index.values)(obj);
+        obj = isArrayLike(obj) ? obj : values(obj);
 
         for (var i = 0, length = obj.length; i < length; i++) {
             item = obj[i];
@@ -140,13 +135,13 @@ function max(obj, iteratee, context) {
         // lastComputed 保存计算过程中出现的最值
         // 遍历元素
         obj.forEach(function (value, index, list) {
-            computed = iteratee(value, index, list); //迭代后的值
+            computed = iteratee(value, index, list);//迭代后的值
             // && 的优先级高于 ||
             if (computed > lastComputed || computed === -Infinity && result === -Infinity) {
                 result = value;
                 lastComputed = computed;
             }
-        });
+        })
     }
 
     return result;
@@ -160,13 +155,10 @@ function max(obj, iteratee, context) {
  * @returns {Number}
  */
 function min(obj, iteratee, context) {
-    var result = Infinity,
-        item,
-        computed,
-        lastComputed = Infinity;
+    var result = Infinity, item, computed, lastComputed = Infinity;
 
     if (!iteratee && obj) {
-        obj = (0, _index.isArrayLike)(obj) ? obj : (0, _index.values)(obj);
+        obj = isArrayLike(obj) ? obj : values(obj);
 
         for (var i = 0, length = obj.length; i < length; i++) {
             item = obj[i];
@@ -186,7 +178,7 @@ function min(obj, iteratee, context) {
                 result = value;
                 lastComputed = computed;
             }
-        });
+        })
     }
 
     return result;
@@ -200,6 +192,7 @@ function findLastIndex(array, callback, context) {
     return _createIndexFinder(-1);
 }
 
+
 function indexOf(array, item) {
     return _createIndexOfFinder(1, findIndex, sortedIndex);
 }
@@ -207,6 +200,7 @@ function indexOf(array, item) {
 function lastIndexOf(array, item) {
     return _createIndexOfFinder(-1, findLastIndex);
 }
+
 
 function sortedIndex(array, obj, iteratee, context) {
     iteratee = _cb(iteratee, context);
@@ -223,6 +217,7 @@ function sortedIndex(array, obj, iteratee, context) {
     return high;
 }
 
+
 function _createIndexFinder(dir) {
     return function (array, callback, context) {
         var length = array.length;
@@ -234,7 +229,7 @@ function _createIndexFinder(dir) {
             }
         }
         return -1;
-    };
+    }
 }
 
 function _createIndexOfFinder(dir, predicate, sortedIndex) {
@@ -249,7 +244,9 @@ function _createIndexOfFinder(dir, predicate, sortedIndex) {
             } else {
                 length = idx >= 0 ? Math.min(idx + 1, length) : idx + length + 1;
             }
-        } else if (sortedIndex && idx && length) {
+        }
+
+        else if (sortedIndex && idx && length) {
             idx = sortedIndex(array, item);
             // 如果该插入的位置的值正好等于元素的值，说明是第一个符合要求的值
             return array[idx] === item ? idx : -1;
@@ -257,7 +254,7 @@ function _createIndexOfFinder(dir, predicate, sortedIndex) {
 
         // 判断是否是 NaN
         if (item !== item) {
-            idx = predicate(array.slice(i, length), isNaN);
+            idx = predicate(array.slice(i, length), isNaN)
             return idx >= 0 ? idx + i : -1;
         }
 
@@ -267,7 +264,7 @@ function _createIndexOfFinder(dir, predicate, sortedIndex) {
             }
         }
         return -1;
-    };
+    }
 }
 
 function _cb(fn, context) {
@@ -275,6 +272,5 @@ function _cb(fn, context) {
         //如果回调函数存在，则执行回调函数，并且将传入的参数当做参数传入回调函数
         //如果回调函数不存在，则直接将传入的参数返回，什么也不做
         return fn ? fn.call(context, arg) : arg;
-    };
+    }
 }
-//# sourceMappingURL=index.js.map

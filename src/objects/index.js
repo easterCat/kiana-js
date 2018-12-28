@@ -1,35 +1,29 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 /**
  * Created by easterCat on 2018/1/22.
  */
 
 var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
 
-exports.keys = keys;
-exports.values = values;
-exports.extend = extend;
-exports.isElement = isElement;
-exports.isArray = isArray;
-exports.isObject = isObject;
-exports.isPlainObject = isPlainObject;
-exports.isWindow = isWindow;
-exports.isFunction = isFunction;
-exports.isDate = isDate;
-exports.isError = isError;
-exports.isString = isString;
-exports.isArguments = isArguments;
-exports.isNumber = isNumber;
-exports.isRegExp = isRegExp;
-exports.isEmpty = isEmpty;
-exports.pick = pick;
-
+export {
+    keys,
+    values,
+    extend,
+    isElement,
+    isArray,
+    isObject,
+    isPlainObject,
+    isWindow,
+    isFunction,
+    isDate,
+    isError,
+    isString,
+    isArguments,
+    isNumber,
+    isRegExp,
+    isEmpty,
+    pick,
+    isArrayLike
+}
 
 function isArrayLike(collection) {
     var length = collection.length;
@@ -42,7 +36,8 @@ function isArrayLike(collection) {
  * @returns {boolean}
  */
 function isArray(obj) {
-    if (Array.isArray) return Array.isArray(obj);else return type(obj) === 'array';
+    if (Array.isArray) return Array.isArray(obj);
+    else return type(obj) === 'array';
 }
 
 /**
@@ -61,7 +56,7 @@ function keys(obj) {
 
     for (var type in obj) {
         if (obj.hasOwnProperty(type)) {
-            keys.push(type);
+            keys.push(type)
         }
     }
 
@@ -108,7 +103,7 @@ function extend() {
         i++;
     }
     // 如果target不是对象，我们是无法进行复制的，所以设为{}
-    if ((typeof target === 'undefined' ? 'undefined' : _typeof(target)) !== 'object' && !isFunction(target)) {
+    if (typeof target !== 'object' && !isFunction(target)) {
         target = {};
     }
 
@@ -117,8 +112,8 @@ function extend() {
         if (options !== null) {
             for (name in options) {
                 if (options.hasOwnProperty(name)) {
-                    src = target[name]; // 要复制的对象的属性值
-                    copy = options[name]; // 要复制的对象的属性值
+                    src = target[name];// 要复制的对象的属性值
+                    copy = options[name];// 要复制的对象的属性值
 
                     // 解决循环引用
                     if (target === copy) {
@@ -126,7 +121,8 @@ function extend() {
                     }
 
                     // 要递归的对象必须是 plainObject 或者数组
-                    if (deep && copy && (isPlainObject(copy) || (copyIsArray = Array.isArray(copy)))) {
+                    if (deep && copy && (isPlainObject(copy) ||
+                        (copyIsArray = Array.isArray(copy)))) {
                         if (copyIsArray) {
                             copyIsArray = false;
                             clone = src && Array.isArray(src) ? src : [];
@@ -144,7 +140,10 @@ function extend() {
     return target;
 }
 
-function pick() {}
+function pick() {
+
+}
+
 
 /**
  * 判断是否为 DOM 元素
@@ -157,10 +156,9 @@ function isElement(obj) {
     return !!(obj && obj.nodeType === 1);
 }
 
+
 function isPlainObject(obj) {
-    var proto,
-        Ctor,
-        newobj = {};
+    var proto, Ctor, newobj = {};
     // 排除掉明显不是obj的以及一些宿主对象如Window
     if (!obj || Object.prototype.toString.call(obj) !== '[object Object]') {
         return false;
@@ -224,7 +222,7 @@ function isRegExp(obj) {
  */
 function isWindow(obj) {
     //如果ibj有一个window属性指向自身，说明是window对象
-    return obj !== null && obj === obj.window;
+    return obj !== null && obj === obj.window
 }
 
 var class2type = {};
@@ -237,6 +235,5 @@ function _type(obj) {
     if (obj === null) {
         return obj + '';
     }
-    return (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object' || typeof obj === 'function' ? class2type[Object.prototype.toString.call(obj)] || 'object' : typeof obj === 'undefined' ? 'undefined' : _typeof(obj);
+    return typeof obj === 'object' || typeof obj === 'function' ? class2type[Object.prototype.toString.call(obj)] || 'object' : typeof obj;
 }
-//# sourceMappingURL=index.js.map

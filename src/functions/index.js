@@ -1,14 +1,11 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 /**
  * Created by easterCat on 2018/1/24.
  */
 
-exports.debounce = debounce;
-exports.throttle = throttle;
+export {
+    debounce,
+    throttle
+}
 
 /**
  * 函数防抖
@@ -17,10 +14,9 @@ exports.throttle = throttle;
  * @param immediate
  * @returns {debounced}
  */
-
 function debounce(func, wait, immediate) {
     var timeout, result;
-    var debounced = function debounced() {
+    var debounced = function () {
         var context = this;
         var args = arguments;
 
@@ -60,7 +56,7 @@ function throttle(func, wait, options) {
     var previous_time = 0;
     if (!options) options = {};
 
-    var later = function later() {
+    var later = function () {
         //leading为false将初始时间设为0
         previous_time = options.leading === false ? 0 : Date.now();
         timeout = null;
@@ -68,7 +64,7 @@ function throttle(func, wait, options) {
         if (!timeout) context = args = null;
     };
 
-    var throttled = function throttled() {
+    var throttled = function () {
         var now_time = Date.now();
         if (!previous_time && options.leading === false) previous_time = now_time;
         //下次触发func的剩余时间
@@ -99,4 +95,3 @@ function throttle(func, wait, options) {
 
     return throttled;
 }
-//# sourceMappingURL=index.js.map

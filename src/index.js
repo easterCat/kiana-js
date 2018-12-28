@@ -1,9 +1,11 @@
-import './index.html';
-import * as arr from './kiana/arrays'
-import * as func from './kiana/functions'
-import * as obj from './kiana/objects'
+/**
+ * Created by easterCat on 2018/4/13.
+ */
 
-let kiana = Object.assign({}, arr, func, obj)
+import * as arr from './arrays/index';
+import * as func from './functions/index';
+import * as obj from './objects/index';
 
-export default kiana
+let kiana = Object.assign({}, arr, func, obj);
 
+export default kiana;
