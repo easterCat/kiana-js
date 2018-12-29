@@ -612,10 +612,52 @@ var func = /*#__PURE__*/Object.freeze({
   throttle: throttle
 });
 
+function setCookie(key, val, time) {
+    var date = new Date();
+    var expiresDays = time;
+    date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000); //格式化为cookie识别的时间
+    document.cookie = key + "=" + val + ";expires=" + date.toGMTString();
+}
+
+function getCookie(key) {
+    var getCookie = document.cookie.replace(/[ ]/g, "");
+    var arrCookie = getCookie.split(";");
+    var tips = void 0;
+    for (var i = 0; i < arrCookie.length; i++) {
+        var arr = arrCookie[i].split("=");
+        if (key === arr[0]) {
+            tips = arr[1];
+            break;
+        }
+    }
+    return tips;
+}
+
+function removeCookie(key) {
+    var date = new Date();
+    date.setTime(date.getTime() - 10000);
+    document.cookie = key + "=v; expires =" + date.toGMTString();
+}
+
+var index = {
+    set: setCookie,
+    get: getCookie,
+    remove: removeCookie
+};
+
+var cookie = /*#__PURE__*/Object.freeze({
+  default: index
+});
+
 /**
  * Created by easterCat on 2018/4/13.
  */
 
-var kiana = Object.assign({}, arr, func, obj);
+var index$1 = {
+    arr: arr,
+    func: func,
+    obj: obj,
+    cookie: cookie
+};
 
-module.exports = kiana;
+module.exports = index$1;

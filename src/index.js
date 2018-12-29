@@ -5,7 +5,11 @@
 import * as arr from './arrays/index';
 import * as func from './functions/index';
 import * as obj from './objects/index';
+import * as cookie from './cookie/index';
 
-let kiana = Object.assign({}, arr, func, obj);
-
-export default kiana;
+export default {
+    arr,
+    func,
+    obj,
+    cookie
+};
