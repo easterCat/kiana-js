@@ -25,8 +25,8 @@ function removeCookie(key) {
     document.cookie = key + "=v; expires =" + date.toGMTString();
 }
 
-export default {
-    set: setCookie,
-    get: getCookie,
-    remove: removeCookie
+export {
+    setCookie as set,
+    getCookie as get,
+    removeCookie as remove
 }

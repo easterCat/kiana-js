@@ -639,25 +639,21 @@ function removeCookie(key) {
     document.cookie = key + "=v; expires =" + date.toGMTString();
 }
 
-var index = {
-    set: setCookie,
-    get: getCookie,
-    remove: removeCookie
-};
-
 var cookie = /*#__PURE__*/Object.freeze({
-  default: index
+  set: setCookie,
+  get: getCookie,
+  remove: removeCookie
 });
 
 /**
  * Created by easterCat on 2018/4/13.
  */
 
-var index$1 = {
+var index = {
     arr: arr,
     func: func,
     obj: obj,
     cookie: cookie
 };
 
-module.exports = index$1;
+module.exports = index;
