@@ -1,8 +1,4 @@
-import {
-    isArrayLike,
-    isArray,
-    values,
-} from '../objects/index';
+import { isArrayLike, isArray, values } from "../objects/index";
 
 export {
     difference,
@@ -15,12 +11,33 @@ export {
     unique,
     without,
     max,
-    min
+    min,
+    intersection
+};
+
+/**
+ * 数组交集
+ * @param {Array} array  参数中的第一个数组
+ */
+function intersection(array) {
+    var result = [];
+    var argLength = arguments.length;
+    var arrLength = array.length;
+    var i;
+    for (i = 0; i < arrLength; i++) {
+        var item = array[i];
+        if (result.indexOf(item) > -1) continue;
+        var j;
+        for (j = 1; j < argLength; j++) {
+            if (arguments[j].indexOf(item) === -1) break;
+        }
+        if (j === argLength) result.push(item);
+    }
+    return result;
 }
 
 /**
  * 数组扁平化
- * _.flatten/
  * @param  {Array} input   要处理的数组
  * @param  {boolean} shallow true只扁平一层,false为全部展开
  * @param  {boolean} strict  是否严格处理元素，下面有解释
@@ -29,18 +46,20 @@ export {
  */
 function flatten(input, shallow, strict, startIndex) {
     // 递归使用的时候会用到output
-    var output = [], idx = 0;
+    var output = [],
+        idx = 0;
 
     for (var i = startIndex || 0, length = input.length; i < length; i++) {
         var value = input[i];
         // 数组 或者 arguments，就进行处理
         // if (isArrayLike(value) && (isArray(value) || _.isArguments(value))) {
-        if (isArrayLike(value) && (isArray(value))) {
+        if (isArrayLike(value) && isArray(value)) {
             // 如果是全部扁平就递归，传入已经处理的 output，递归中接着处理 output
             if (!shallow) {
                 value = flatten(value, shallow, strict);
             }
-            var j = 0, len = value.length;
+            var j = 0,
+                len = value.length;
             output.length += len;
             while (j < len) output[idx++] = value[j++];
         }
@@ -66,9 +85,9 @@ function without(array) {
 function difference(array) {
     //将参数数组展开一层
     var rest = flatten(arguments, true, true, 1);
-    return array.filter(function (item) {
+    return array.filter(function(item) {
         return rest.indexOf(item) === -1;
-    })
+    });
 }
 
 /**
@@ -104,7 +123,6 @@ function unique(array, isSorted, iteratee) {
     return res;
 }
 
-
 /**
  * 获取数组中最大值
  * @param obj 传入的数组或对象
@@ -134,14 +152,17 @@ function max(obj, iteratee, context) {
         // result 保存结果元素
         // lastComputed 保存计算过程中出现的最值
         // 遍历元素
-        obj.forEach(function (value, index, list) {
-            computed = iteratee(value, index, list);//迭代后的值
+        obj.forEach(function(value, index, list) {
+            computed = iteratee(value, index, list); //迭代后的值
             // && 的优先级高于 ||
-            if (computed > lastComputed || computed === -Infinity && result === -Infinity) {
+            if (
+                computed > lastComputed ||
+                (computed === -Infinity && result === -Infinity)
+            ) {
                 result = value;
                 lastComputed = computed;
             }
-        })
+        });
     }
 
     return result;
@@ -155,7 +176,10 @@ function max(obj, iteratee, context) {
  * @returns {Number}
  */
 function min(obj, iteratee, context) {
-    var result = Infinity, item, computed, lastComputed = Infinity;
+    var result = Infinity,
+        item,
+        computed,
+        lastComputed = Infinity;
 
     if (!iteratee && obj) {
         obj = isArrayLike(obj) ? obj : values(obj);
@@ -170,15 +194,18 @@ function min(obj, iteratee, context) {
     } else {
         iteratee = _cb(iteratee, context);
 
-        obj.forEach(function (value, index, list) {
+        obj.forEach(function(value, index, list) {
             //类似于iteratee.call(context,value,index,list);
             computed = iteratee(value, index, list);
 
-            if (computed < lastComputed || computed === Infinity && result === Infinity) {
+            if (
+                computed < lastComputed ||
+                (computed === Infinity && result === Infinity)
+            ) {
                 result = value;
                 lastComputed = computed;
             }
-        })
+        });
     }
 
     return result;
@@ -192,7 +219,6 @@ function findLastIndex(array, callback, context) {
     return _createIndexFinder(-1);
 }
 
-
 function indexOf(array, item) {
     return _createIndexOfFinder(1, findIndex, sortedIndex);
 }
@@ -200,7 +226,6 @@ function indexOf(array, item) {
 function lastIndexOf(array, item) {
     return _createIndexOfFinder(-1, findLastIndex);
 }
-
 
 function sortedIndex(array, obj, iteratee, context) {
     iteratee = _cb(iteratee, context);
@@ -217,9 +242,8 @@ function sortedIndex(array, obj, iteratee, context) {
     return high;
 }
 
-
 function _createIndexFinder(dir) {
-    return function (array, callback, context) {
+    return function(array, callback, context) {
         var length = array.length;
         var index = dir > 0 ? 0 : length - 1;
 
@@ -229,24 +253,23 @@ function _createIndexFinder(dir) {
             }
         }
         return -1;
-    }
+    };
 }
 
 function _createIndexOfFinder(dir, predicate, sortedIndex) {
     //idx设定开始查找的位置
-    return function (array, item, idx) {
+    return function(array, item, idx) {
         var length = array.length;
         var i = 0;
 
-        if (typeof idx === 'number') {
+        if (typeof idx === "number") {
             if (idx > 0) {
                 i = idx >= 0 ? idx : Math.max(length + idx, 0);
             } else {
-                length = idx >= 0 ? Math.min(idx + 1, length) : idx + length + 1;
+                length =
+                    idx >= 0 ? Math.min(idx + 1, length) : idx + length + 1;
             }
-        }
-
-        else if (sortedIndex && idx && length) {
+        } else if (sortedIndex && idx && length) {
             idx = sortedIndex(array, item);
             // 如果该插入的位置的值正好等于元素的值，说明是第一个符合要求的值
             return array[idx] === item ? idx : -1;
@@ -254,23 +277,27 @@ function _createIndexOfFinder(dir, predicate, sortedIndex) {
 
         // 判断是否是 NaN
         if (item !== item) {
-            idx = predicate(array.slice(i, length), isNaN)
+            idx = predicate(array.slice(i, length), isNaN);
             return idx >= 0 ? idx + i : -1;
         }
 
-        for (idx = dir > 0 ? i : length - 1; idx >= 0 && idx < length; idx += dir) {
+        for (
+            idx = dir > 0 ? i : length - 1;
+            idx >= 0 && idx < length;
+            idx += dir
+        ) {
             if (array[idx] === item) {
                 return idx;
             }
         }
         return -1;
-    }
+    };
 }
 
 function _cb(fn, context) {
-    return function (arg) {
+    return function(arg) {
         //如果回调函数存在，则执行回调函数，并且将传入的参数当做参数传入回调函数
         //如果回调函数不存在，则直接将传入的参数返回，什么也不做
         return fn ? fn.call(context, arg) : arg;
-    }
+    };
 }
