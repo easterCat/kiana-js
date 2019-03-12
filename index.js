@@ -9,7 +9,19 @@ import * as cookie from "./src/cookie/index";
 import * as time from "./src/time/index";
 import * as browser from "./src/browser/browser";
 import * as mobile from "./src/browser/mobile";
+import * as localStorage from "./src/storage/localStorage";
+import * as sessionStorage from "./src/storage/sessionStorage";
 
-const kiana = Object.assign({}, arr, func, obj, cookie, time, browser, mobile);
+const kiana = Object.assign(
+    {},
+    arr,
+    func,
+    obj,
+    cookie,
+    time,
+    browser,
+    mobile,
+    localStorage
+);
 
 export default kiana;
