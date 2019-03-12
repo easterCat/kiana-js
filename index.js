@@ -21,7 +21,8 @@ const kiana = Object.assign(
     time,
     browser,
     mobile,
-    localStorage
+    localStorage,
+    sessionStorage
 );
 
 export default kiana;
