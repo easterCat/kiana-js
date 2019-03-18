@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/easterCat/kiana-js#readme",
   "devDependencies": {
+    "babel-polyfill": "^6.26.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -42,7 +43,6 @@
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "ypkgfiles": "^1.6.0"
   }
 }
