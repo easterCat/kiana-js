@@ -9,8 +9,8 @@ import * as cookie from "./src/cookie/index";
 import * as time from "./src/time/index";
 import * as browser from "./src/browser/browser";
 import * as mobile from "./src/browser/mobile";
-import * as localStorage from "./src/storage/localStorage";
-import * as sessionStorage from "./src/storage/sessionStorage";
+import * as localStorage from "./src/localStorage";
+import * as sessionStorage from "./src/sessionStorage";
 
 const kiana = Object.assign(
     {},
