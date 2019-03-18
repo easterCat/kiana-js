@@ -9,7 +9,8 @@
     "start": "webpack-dev-server --hot --inline --devtool eval --progress --colors --config webpack.config.js",
     "rollup": "rollup --config rollup.config.js",
     "karma": "karma start karma.conf.js",
-    "mocha": "mocha --require babel-core/register"
+    "mocha": "mocha --require babel-core/register",
+    "update": "node ./bin/update.js"
   },
   "repository": {
     "type": "git",
