@@ -11,6 +11,7 @@ import * as browser from "./src/browser/browser";
 import * as mobile from "./src/browser/mobile";
 import * as localStorage from "./src/localStorage";
 import * as sessionStorage from "./src/sessionStorage";
+import * as date from "./src/date/date";
 
 const kiana = Object.assign(
     {},
@@ -22,7 +23,8 @@ const kiana = Object.assign(
     browser,
     mobile,
     localStorage,
-    sessionStorage
+    sessionStorage,
+    date
 );
 
 export default kiana;
