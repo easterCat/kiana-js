@@ -1,7 +1,9 @@
-function MyDate() {}
+function MyDate() {
+    this.date = this.getDate();
+}
 
 MyDate.prototype.getDate = function(date) {
-    let date = date ? new Date(date) : new Date();
+    var date = date ? new Date(date) : new Date();
 
     //https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
     return {
@@ -25,12 +27,12 @@ MyDate.prototype.getDate = function(date) {
  * @param {*} day
  */
 MyDate.prototype.getDay = function(day) {
-    let today = new Date();
-    let targetDay = today.getTime() + 1000 * 60 * 60 * 24 * day;
-    let targetDate = new Date().setTime(targetDay);
-    let date = this.getDate(targetDate);
-    let seperator = "-";
-    let timearr = [date.year, seperator, date.month, seperator, date.day];
+    var today = new Date();
+    var targetDay = today.getTime() + 1000 * 60 * 60 * 24 * day;
+    var targetDate = new Date().setTime(targetDay);
+    var date = this.getDate(targetDate);
+    var seperator = "-";
+    var timearr = [date.year, seperator, date.month, seperator, date.day];
     return timearr.join("");
 };
 
@@ -69,7 +71,7 @@ MyDate.prototype.getNearThirtyDay = function(seperator) {
  * @param {} time
  */
 MyDate.prototype.timeStamp = function(time) {
-    let d = time ? new Date(time).getTime() : new Date().getTime();
+    var d = time ? new Date(time).getTime() : new Date().getTime();
     return d;
 };
 
@@ -78,10 +80,10 @@ MyDate.prototype.timeStamp = function(time) {
  * @param {} callback
  */
 MyDate.prototype.elapsedTime = function(callback) {
-    let start = new Date().getTime();
+    var start = new Date().getTime();
     callback && callback();
-    let end = new Date().getTime();
-    let elapsed = end - start;
+    var end = new Date().getTime();
+    var elapsed = end - start;
     return elapsed;
 };
 
