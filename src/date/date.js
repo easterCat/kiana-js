@@ -1,6 +1,4 @@
-function MyDate() {
-    this.date = this.getDate(new Date());
-}
+function MyDate() {}
 
 MyDate.prototype.getDate = function(date) {
     let date = date ? new Date(date) : new Date();
@@ -30,7 +28,7 @@ MyDate.prototype.getDay = function(day) {
     let today = new Date();
     let targetDay = today.getTime() + 1000 * 60 * 60 * 24 * day;
     let targetDate = new Date().setTime(targetDay);
-    let date = this.getDate();
+    let date = this.getDate(targetDate);
     let seperator = "-";
     let timearr = [date.year, seperator, date.month, seperator, date.day];
     return timearr.join("");
