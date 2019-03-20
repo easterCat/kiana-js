@@ -95,6 +95,6 @@ MyDate.prototype.patchZero = function(num) {
     return num >= 10 ? num : `0${num}`;
 };
 
-const instance = new Date();
+const date = new Date();
 
-module.exports = instance;
+export { date };
