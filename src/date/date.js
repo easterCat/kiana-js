@@ -1,6 +1,5 @@
 class MyDate {
     constructor() {
-        super();
         this.date = this.getDate(new Date());
     }
 
