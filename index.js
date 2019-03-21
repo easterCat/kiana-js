@@ -23,9 +23,10 @@ import * as sessionStorage from "./src/sessionStorage";
 //日期方法
 import * as date from "./src/date/date";
 //工具方法
-import * as utils from "./src/dom/download";
+import {fileDownload} from "./src/dom/download";
+import {resetElement} from "./src/dom/resetElement";
 
-module.exports = Object.assign(
+export default Object.assign(
     {},
     arr,
     func,
@@ -37,5 +38,6 @@ module.exports = Object.assign(
     localStorage,
     sessionStorage,
     date,
-    utils,
+    {fileDownload},
+    {resetElement},
 );
