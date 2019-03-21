@@ -26,7 +26,7 @@ import * as date from "./src/date/date";
 import {fileDownload} from "./src/dom/download";
 import {resetElement} from "./src/dom/resetElement";
 
-const kiana = Object.assign(
+export default Object.assign(
     {},
     arr,
     func,
@@ -41,7 +41,3 @@ const kiana = Object.assign(
     {fileDownload},
     {resetElement},
 );
-
-export {
-...kiana
-}
