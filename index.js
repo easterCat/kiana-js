@@ -25,6 +25,7 @@ import * as date from "./src/date/date";
 //工具方法
 import {fileDownload} from "./src/dom/download";
 import {resetElement} from "./src/dom/resetElement";
+import {copyText} from "./src/dom/copyText";
 
 export default Object.assign(
     {},
@@ -40,4 +41,5 @@ export default Object.assign(
     date,
     {fileDownload},
     {resetElement},
+    {copyText},
 );
