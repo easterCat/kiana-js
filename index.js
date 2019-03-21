@@ -12,7 +12,7 @@ import * as mobile from "./src/browser/mobile";
 import * as localStorage from "./src/localStorage";
 import * as sessionStorage from "./src/sessionStorage";
 import * as date from "./src/date/date";
-import fileDownload from "./src/dom/download";
+import {fileDownload} from "./src/dom/download";
 
 const kiana = Object.assign(
     {},
@@ -26,7 +26,7 @@ const kiana = Object.assign(
     localStorage,
     sessionStorage,
     date,
-    { fileDownload },
+    {fileDownload},
 );
 
 export default kiana;
