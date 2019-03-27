@@ -2,12 +2,14 @@
  * Created by easterCat on 2017/10/30.
  */
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     resolve: {
         modules: [path.resolve(__dirname, "node_modules")]
     },
-    entry: path.resolve(__dirname, "src/index.js"),
+    entry: path.resolve(__dirname, "src/app.js"),
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "index.js"
@@ -20,9 +22,6 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: "babel-loader",
-                    options: {
-                        presets: ["env"]
-                    }
                 }
             },
             {
@@ -58,5 +57,9 @@ module.exports = {
         host: "192.168.0.139",
         hot: true, //热替换
         open: true
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin(),
+        new BundleAnalyzerPlugin(),
+    ]
 };
