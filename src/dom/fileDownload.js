@@ -4,9 +4,9 @@
 export function fileDownload(data, filename, mime) {
     var blob;
     if (/image/.test(mime)) {
-        blob = base64ToBlob(data);
+        blob = _base64ToBlob(data);
     } else {
-        blob = dataToBlob(mime);
+        blob = _dataToBlob(mime);
     }
 
     if (window.navigator.msSaveBlob) { // if browser is IE
@@ -28,7 +28,7 @@ export function fileDownload(data, filename, mime) {
 }
 
 
-function base64ToBlob(url) {
+function _base64ToBlob(url) {
     //arr[0] : data:image/png;base64
     //arr[1] : iVBORw0KGgoAAAANSUhEUgAAAXIAAAKrCAYAAADs/Q......
     var arr = url.split(',');
@@ -42,22 +42,8 @@ function base64ToBlob(url) {
     return new Blob([u8arr], {type: mime});
 }
 
-function dataToBlob(mime) {
+function _dataToBlob(mime) {
     return new Blob([data], {type: mime || 'application/octet-stream'});
 }
 
 
-// 废弃
-// export function imgDownload(id, filename) {
-//     let img = document.getElementById(id);
-//     if (!img) {
-//         throw new Error("该图片不存在");
-//     }
-//     let a = document.createElement("a");
-//     a.style.display = "none";
-//     a.href = img.src;
-//     a.download = filename;
-//     document.body.appendChild(a);
-//     a.click();
-//     document.body.removeChild(a);
-// }

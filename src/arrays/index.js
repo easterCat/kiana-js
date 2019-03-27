@@ -1,17 +1,13 @@
-import { isArrayLike, isArray, values } from "../objects/index";
+import {isArrayLike, isArray, values} from "../objects/index";
 
 export {
     difference,
-    flatten,
     findIndex,
     findLastIndex,
     sortedIndex,
     indexOf,
     lastIndexOf,
-    unique,
     without,
-    max,
-    min,
     intersection
 };
 
@@ -37,41 +33,6 @@ function intersection(array) {
 }
 
 /**
- * 数组扁平化
- * @param  {Array} input   要处理的数组
- * @param  {boolean} shallow true只扁平一层,false为全部展开
- * @param  {boolean} strict  是否严格处理元素，下面有解释
- * @param  {Number} startIndex  开始查找的起始位置
- * 源码地址：https://github.com/jashkenas/underscore/blob/master/underscore.js#L528
- */
-function flatten(input, shallow, strict, startIndex) {
-    // 递归使用的时候会用到output
-    var output = [],
-        idx = 0;
-
-    for (var i = startIndex || 0, length = input.length; i < length; i++) {
-        var value = input[i];
-        // 数组 或者 arguments，就进行处理
-        // if (isArrayLike(value) && (isArray(value) || _.isArguments(value))) {
-        if (isArrayLike(value) && isArray(value)) {
-            // 如果是全部扁平就递归，传入已经处理的 output，递归中接着处理 output
-            if (!shallow) {
-                value = flatten(value, shallow, strict);
-            }
-            var j = 0,
-                len = value.length;
-            output.length += len;
-            while (j < len) output[idx++] = value[j++];
-        }
-        // 不是数组，根据 strict 的值判断是跳过不处理还是放入 output
-        else if (!strict) {
-            output[idx++] = value;
-        }
-    }
-    return output;
-}
-
-/**
  * 返回一个删除所有指定值后的 array副本
  * @param array
  * @returns {*}
@@ -85,7 +46,7 @@ function without(array) {
 function difference(array) {
     //将参数数组展开一层
     var rest = flatten(arguments, true, true, 1);
-    return array.filter(function(item) {
+    return array.filter(function (item) {
         return rest.indexOf(item) === -1;
     });
 }
@@ -123,94 +84,6 @@ function unique(array, isSorted, iteratee) {
     return res;
 }
 
-/**
- * 获取数组中最大值
- * @param obj 传入的数组或对象
- * @param iteratee 迭代函数
- * @param context
- * @returns {number}
- */
-function max(obj, iteratee, context) {
-    var result = -Infinity,
-        computed,
-        lastComputed = -Infinity,
-        item;
-
-    //如果只是传入数组或对象，没有迭代函数，则正常比较
-    if (!iteratee && obj) {
-        obj = isArrayLike(obj) ? obj : values(obj);
-
-        for (var i = 0, length = obj.length; i < length; i++) {
-            item = obj[i];
-            if (item > result) {
-                result = item;
-            }
-        }
-    } else {
-        iteratee = _cb(iteratee, context);
-
-        // result 保存结果元素
-        // lastComputed 保存计算过程中出现的最值
-        // 遍历元素
-        obj.forEach(function(value, index, list) {
-            computed = iteratee(value, index, list); //迭代后的值
-            // && 的优先级高于 ||
-            if (
-                computed > lastComputed ||
-                (computed === -Infinity && result === -Infinity)
-            ) {
-                result = value;
-                lastComputed = computed;
-            }
-        });
-    }
-
-    return result;
-}
-
-/**
- * 获取数组中最小值
- * @param obj
- * @param iteratee
- * @param context
- * @returns {Number}
- */
-function min(obj, iteratee, context) {
-    var result = Infinity,
-        item,
-        computed,
-        lastComputed = Infinity;
-
-    if (!iteratee && obj) {
-        obj = isArrayLike(obj) ? obj : values(obj);
-
-        for (var i = 0, length = obj.length; i < length; i++) {
-            item = obj[i];
-
-            if (item < result) {
-                result = item;
-            }
-        }
-    } else {
-        iteratee = _cb(iteratee, context);
-
-        obj.forEach(function(value, index, list) {
-            //类似于iteratee.call(context,value,index,list);
-            computed = iteratee(value, index, list);
-
-            if (
-                computed < lastComputed ||
-                (computed === Infinity && result === Infinity)
-            ) {
-                result = value;
-                lastComputed = computed;
-            }
-        });
-    }
-
-    return result;
-}
-
 function findIndex(array, callback, context) {
     return _createIndexFinder(1);
 }
@@ -243,7 +116,7 @@ function sortedIndex(array, obj, iteratee, context) {
 }
 
 function _createIndexFinder(dir) {
-    return function(array, callback, context) {
+    return function (array, callback, context) {
         var length = array.length;
         var index = dir > 0 ? 0 : length - 1;
 
@@ -258,7 +131,7 @@ function _createIndexFinder(dir) {
 
 function _createIndexOfFinder(dir, predicate, sortedIndex) {
     //idx设定开始查找的位置
-    return function(array, item, idx) {
+    return function (array, item, idx) {
         var length = array.length;
         var i = 0;
 
@@ -295,7 +168,7 @@ function _createIndexOfFinder(dir, predicate, sortedIndex) {
 }
 
 function _cb(fn, context) {
-    return function(arg) {
+    return function (arg) {
         //如果回调函数存在，则执行回调函数，并且将传入的参数当做参数传入回调函数
         //如果回调函数不存在，则直接将传入的参数返回，什么也不做
         return fn ? fn.call(context, arg) : arg;

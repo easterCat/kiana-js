@@ -23,7 +23,7 @@ import * as sessionStorage from "./src/sessionStorage";
 //日期方法
 import * as date from "./src/date/date";
 //工具方法
-import {fileDownload} from "./src/dom/download";
+import {fileDownload} from "./src/dom/fileDownload";
 import {resetElement} from "./src/dom/resetElement";
 import {copyText} from "./src/dom/copyText";
 
