@@ -54,7 +54,7 @@ module.exports = {
         contentBase: "./src", //提供本地服务器
         historyApiFallback: true, //跳转index.html
         port: 3333, //监听端口3333
-        host: "192.168.0.139",
+        host: "localhost",
         hot: true, //热替换
         open: true
     },

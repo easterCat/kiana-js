@@ -3,6 +3,12 @@
     "env"
   ],
   "plugins": [
-    "transform-runtime"
+    [
+      "demand-loading",
+      {
+        "library": "kiana"
+      },
+      "transform-runtime"
+    ]
   ]
 }
