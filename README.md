@@ -1,15 +1,22 @@
-## 1.0.12
 
-按需加载实现
+### 安装
+```
+npm install kiana-js --save
+```
 
-## 1.0.11
+### 安装配套插件
+```
+npm install babel-plugin-kiana-demand-loading --save-dev
+```
 
-添加了 time 时间模块
-
-## 1.0.8
-
-添加了 cookie,session 模块
-
-## 1.0.0
-
-发布 arrays.functions,objects 模块
+### 修改.babelrc
+```
+  "plugins": [
+    [
+      "kiana-demand-loading",
+      {
+        "library": "kiana-js"
+      }
+    ],
+  ]
+```

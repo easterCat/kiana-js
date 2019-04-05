@@ -12,6 +12,7 @@ export function imageDownload(id, filename) {
     }
     var save_link = document.createElement("a");
     var event = document.createEvent('MouseEvents');
+    // fire fox bug
     event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
     save_link.style.display = "none";
     save_link.href = img_element.src;

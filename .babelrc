@@ -15,6 +15,7 @@
       }
     ],
     "transform-runtime",
-    "external-helpers"
+    "external-helpers",
+    "transform-object-rest-spread"
   ]
 }

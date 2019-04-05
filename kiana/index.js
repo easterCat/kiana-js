@@ -24,9 +24,10 @@ import * as sessionStorage from "./sessionStorage";
 //日期方法
 import * as date from "./date/date";
 //工具方法
-import {fileDownload} from "./dom/fileDownload";
-import {resetElement} from "./dom/resetElement";
-import {copyText} from "./dom/copyText";
+import {fileDownload} from "./utils/fileDownload";
+import {resetElement} from "./utils/resetElement";
+import {imageDownload} from "./utils/imageDownload";
+import {copyText} from "./utils/copyText";
 
 export default Object.assign(
     {},
@@ -43,5 +44,5 @@ export default Object.assign(
     {fileDownload},
     {resetElement},
     {copyText},
-    {flatten}
+    {imageDownload},
 );
