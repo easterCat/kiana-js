@@ -3,7 +3,7 @@ const stamp = `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeStrin
 
 console.log(stamp);
 
-const command = `npm run rollup && git add . && git commit -m "快速提交=>${stamp}" && git push -u origin master`;
+const command = `git add . && git commit -m "快速提交=>${stamp}" && git push -u origin master`;
 
 console.log(command);
 
