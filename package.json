@@ -80,7 +80,8 @@
     "rollup": "rollup --config rollup.config.js",
     "start": "webpack-dev-server --hot --inline --devtool eval --progress --colors --config webpack.config.js",
     "test": "test",
-    "update": "node ./bin/update.js"
+    "update": "node ./bin/update.js",
+    "patch": "npm version patch && npm publish"
   },
   "version": "1.0.16"
 }
