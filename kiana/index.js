@@ -34,6 +34,7 @@ import {fileDownload} from "./utils/fileDownload";
 import {resetElement} from "./utils/resetElement";
 import {imageDownload} from "./utils/imageDownload";
 import {copyText} from "./utils/copyText";
+import {formatMoney} from "./utils/formatMoney";
 
 export default Object.assign(
     {},
@@ -57,4 +58,5 @@ export default Object.assign(
     {resetElement},
     {copyText},
     {imageDownload},
+    {formatMoney}
 );

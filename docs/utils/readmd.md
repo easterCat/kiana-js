@@ -54,3 +54,14 @@ k.resetElement(id);
 ```
 - 参数 (id, filename) 
     - id <div id="Own">，元素的id属性
+    
+### formatMoney(money, place)
+
+将金额转英文计算样式
+
+```
+k.formatMoney();
+```
+- 参数 (money, place) 
+    - money 需要格式的钱
+    - place 保留的位数
