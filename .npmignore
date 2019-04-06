@@ -7,6 +7,7 @@ test
 dist
 bin
 src
+docs
 .vscode
 .idea
 .babelrc
