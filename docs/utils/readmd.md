@@ -60,7 +60,10 @@ k.resetElement(id);
 将金额转英文计算样式
 
 ```
-k.formatMoney();
+console.log(formatMoney("1234567.8910")); //1,234,567.89
+console.log(formatMoney("1234567.8910", 3)); //1,234,567.891
+console.log(formatMoney(1234567.8910, 3)); //1,234,567.891
+console.log(formatMoney("+1234567.8910", 3)); //+1,234,567.891
 ```
 - 参数 (money, place) 
     - money 需要格式的钱
