@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4371f374-90ce-469e-9b31-5ca15d07d19e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kiana/utils/formatMoney.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/update.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/update.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/utils/readmd.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/utils/readmd.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kiana/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/kiana/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +15,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kiana/utils/formatMoney.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
               <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="518">
+              <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -169,18 +174,18 @@
       <workItem from="1554434434555" duration="436000" />
       <workItem from="1554438260316" duration="12862000" />
       <workItem from="1554523014886" duration="617000" />
-      <workItem from="1554525790347" duration="6584000" />
+      <workItem from="1554525790347" duration="6626000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30431000" />
+    <option name="totallyTimeSpent" value="30473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12677725" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12677725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -192,7 +197,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49881518" visible="true" weight="0.29830235" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49881518" visible="true" weight="0.29830235" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5011848" side_tool="true" weight="0.81891674" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -448,17 +453,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="83" column="47" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kiana/utils/formatMoney.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
         </state>
       </provider>
     </entry>
