@@ -10,7 +10,9 @@ import * as func from "./functions/index";
 //对象
 import * as obj from "./objects/index";
 //cookie操作
-import * as cookie from "./cookie/index";
+import {getCookie} from "./cookie/getCookie";
+import {removeCookie} from "./cookie/removeCookie";
+import {setCookie} from "./cookie/setCookie";
 //时间方法
 import * as time from "./time/index";
 //浏览器方法
@@ -18,10 +20,13 @@ import * as browser from "./browser/browser";
 //设备判断
 import * as mobile from "./browser/mobile";
 //本地存储
-import * as localStorage from "./localStorage";
+import {getLocal} from "./localStorage/getLocal";
+import {initLocal} from "./localStorage/initLocal";
+import {setLocal} from "./localStorage/setLocal";
 //会话存储
-import * as sessionStorage from "./sessionStorage";
-import * as localStorage from "./localStorage";
+import {getSession} from "./sessionStorage/getSession";
+import {initSession} from "./sessionStorage/initSession";
+import {setSession} from "./sessionStorage/setSession";
 //日期方法
 import * as date from "./date/date";
 //工具方法
@@ -31,20 +36,25 @@ import {imageDownload} from "./utils/imageDownload";
 import {copyText} from "./utils/copyText";
 
 export default Object.assign(
-  {},
-  arr,
-  func,
-  obj,
-  cookie,
-  time,
-  browser,
-  mobile,
-  localStorage,
-  sessionStorage,
-  localStorage,
-  date,
-  {fileDownload},
-  {resetElement},
-  {copyText},
-  {imageDownload},
+    {},
+    arr,
+    func,
+    obj,
+    {getCookie},
+    {removeCookie},
+    {setCookie},
+    time,
+    browser,
+    mobile,
+    {getLocal},
+    {initLocal},
+    {setLocal},
+    {getSession},
+    {initSession},
+    {setSession},
+    date,
+    {fileDownload},
+    {resetElement},
+    {copyText},
+    {imageDownload},
 );
