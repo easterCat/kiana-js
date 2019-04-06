@@ -21,6 +21,7 @@ import * as mobile from "./browser/mobile";
 import * as localStorage from "./localStorage";
 //会话存储
 import * as sessionStorage from "./sessionStorage";
+import * as localStorage from "./localStorage";
 //日期方法
 import * as date from "./date/date";
 //工具方法
@@ -30,19 +31,20 @@ import {imageDownload} from "./utils/imageDownload";
 import {copyText} from "./utils/copyText";
 
 export default Object.assign(
-    {},
-    arr,
-    func,
-    obj,
-    cookie,
-    time,
-    browser,
-    mobile,
-    localStorage,
-    sessionStorage,
-    date,
-    {fileDownload},
-    {resetElement},
-    {copyText},
-    {imageDownload},
+  {},
+  arr,
+  func,
+  obj,
+  cookie,
+  time,
+  browser,
+  mobile,
+  localStorage,
+  sessionStorage,
+  localStorage,
+  date,
+  {fileDownload},
+  {resetElement},
+  {copyText},
+  {imageDownload},
 );

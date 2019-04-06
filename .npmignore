@@ -4,6 +4,11 @@ node_modules
 config
 demo
 test
+dist
+bin
+src
+.vscode
+.idea
 .babelrc
 .editorconfig
 .eslintrc.js

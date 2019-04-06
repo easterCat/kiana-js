@@ -1,27 +1,43 @@
 {
-  "name": "kiana-js",
-  "version": "1.0.14",
-  "description": "- optimizeCb\r - cb\r - _.iteratee\r - _.each\r - _.matcher\r - _.property\r - shallowProperty\r - deepGet\r - _.reverse\r - _.map\r - _.identity\r - _.getMax\r - result\r - _.mixin",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack",
-    "test": "test",
-    "start": "webpack-dev-server --hot --inline --devtool eval --progress --colors --config webpack.config.js",
-    "rollup": "rollup --config rollup.config.js",
-    "karma": "karma start karma.conf.js",
-    "mocha": "mocha --require babel-core/register",
-    "update": "node ./bin/update.js"
+  "_from": "kiana-js",
+  "_id": "kiana-js@1.0.14",
+  "_inBundle": false,
+  "_integrity": "sha512-cvnnLEPAa03ePumtuq6Dadg3sVZeRUmCkGuomvFOCkeDBfYYFObBqOjAjM6y5jZXDe35DW0nvooW58S446vI9w==",
+  "_location": "/kiana-js",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "kiana-js",
+    "name": "kiana-js",
+    "escapedName": "kiana-js",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com:easterCat/kiana-js.git"
+  "_requiredBy": [
+    "#USER",
+    "/",
+    "/kiana-js"
+  ],
+  "_resolved": "https://registry.npmjs.org/kiana-js/-/kiana-js-1.0.14.tgz",
+  "_shasum": "1da6d73ffd69ea54cca5867ae8bdabe8a83b2e41",
+  "_spec": "kiana-js",
+  "_where": "D:\\comProject\\pc.haocai",
+  "author": {
+    "name": "easterCat"
   },
-  "author": "easterCat",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/easterCat/kiana-js/issues"
   },
-  "homepage": "https://github.com/easterCat/kiana-js#readme",
+  "bundleDependencies": false,
+  "dependencies": {
+    "kiana-js": "^1.0.12",
+    "lodash": "^4.17.11",
+    "ypkgfiles": "^1.6.0"
+  },
+  "deprecated": false,
+  "description": "- optimizeCb\r - cb\r - _.iteratee\r - _.each\r - _.matcher\r - _.property\r - shallowProperty\r - deepGet\r - _.reverse\r - _.map\r - _.identity\r - _.getMax\r - result\r - _.mixin",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -49,9 +65,22 @@
     "webpack-bundle-analyzer": "^3.1.0",
     "webpack-dev-server": "^2.11.1"
   },
-  "dependencies": {
-    "kiana-js": "^1.0.12",
-    "lodash": "^4.17.11",
-    "ypkgfiles": "^1.6.0"
-  }
+  "homepage": "https://github.com/easterCat/kiana-js#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "kiana-js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easterCat/kiana-js.git"
+  },
+  "scripts": {
+    "build": "webpack",
+    "karma": "karma start karma.conf.js",
+    "mocha": "mocha --require babel-core/register",
+    "rollup": "rollup --config rollup.config.js",
+    "start": "webpack-dev-server --hot --inline --devtool eval --progress --colors --config webpack.config.js",
+    "test": "test",
+    "update": "node ./bin/update.js"
+  },
+  "version": "1.0.14"
 }
