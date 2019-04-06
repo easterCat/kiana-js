@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4371f374-90ce-469e-9b31-5ca15d07d19e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/utils/readmd.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/utils/readmd.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kiana/sessionStorage/setSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/kiana/sessionStorage/setSession.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,31 +26,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docs/utils/readmd.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="488">
-                <caret line="61" column="3" lean-forward="true" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/kiana/sessionStorage/setSession.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="85" column="21" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kiana/utils/imageDownload.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="425">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -95,6 +74,7 @@
         <option value="$PROJECT_DIR$/kiana/utils/formatMoney.js" />
         <option value="$PROJECT_DIR$/bin/update.js" />
         <option value="$PROJECT_DIR$/docs/utils/readmd.md" />
+        <option value="$PROJECT_DIR$/kiana/sessionStorage/setSession.js" />
       </list>
     </option>
   </component>
@@ -104,7 +84,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="347" />
     <option name="y" value="163" />
     <option name="width" value="1908" />
@@ -115,6 +95,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,13 +128,18 @@
               <item name="kiana-js" type="b2602c69:ProjectViewProjectNode" />
               <item name="kiana-js" type="462c0819:PsiDirectoryNode" />
               <item name="kiana" type="462c0819:PsiDirectoryNode" />
+              <item name="sessionStorage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kiana-js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kiana-js" type="462c0819:PsiDirectoryNode" />
+              <item name="kiana" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,16 +194,16 @@
       <workItem from="1554438260316" duration="12862000" />
       <workItem from="1554523014886" duration="617000" />
       <workItem from="1554525790347" duration="6708000" />
-      <workItem from="1554533655305" duration="253000" />
+      <workItem from="1554533655305" duration="350000" />
+      <workItem from="1554551221494" duration="2224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30808000" />
+    <option name="totallyTimeSpent" value="33129000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12677725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -456,13 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kiana/sessionStorage/setSession.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/update.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -472,7 +451,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
+        <state relative-caret-position="2125">
           <caret line="85" column="21" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
         </state>
       </provider>
@@ -484,6 +463,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/utils/readmd.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="538">
+            <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kiana/utils/formatMoney.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -491,13 +480,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/utils/readmd.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="488">
-            <caret line="61" column="3" lean-forward="true" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/kiana/sessionStorage/setSession.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
