@@ -83,5 +83,5 @@
     "update": "node ./bin/update.js",
     "patch": "npm version patch && npm publish"
   },
-  "version": "1.0.17"
+  "version": "1.0.18"
 }
