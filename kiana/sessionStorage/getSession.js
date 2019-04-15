@@ -2,15 +2,15 @@
  * Created by easterCat on 2019/4/6.
  */
 
+//用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据
 export function getSession(name) {
   if (name && sessionStorage.getItem(name)) {
-    var data = sessionStorage.getItem(name);
-    return deserialize(data);
+    let data = sessionStorage.getItem(name);
+    return _deserialize(data);
   }
 }
 
-//https://github.com/jaywcjlove/store.js/blob/master/dist/store.js
-function deserialize(value) {
+function _deserialize(value) {
   if (typeof value !== 'string') {
     return undefined;
   }

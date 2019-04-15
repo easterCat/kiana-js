@@ -4,7 +4,7 @@
 
 export function setSession(name, data) {
   if (name) {
-    var store = window.sessionStorage.getItem(name);
+    let store = window.sessionStorage.getItem(name);
     if (store) {
       console.warn(name + "=>数据在sessionStorage已存在,执行替换操作");
       window.sessionStorage.removeItem(name);

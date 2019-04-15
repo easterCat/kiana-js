@@ -1,21 +1,50 @@
+const store = {
+  init: initSession,
+  set: setSession,
+  get: getSession,
+  remove: removeSession,
+};
+
+export default store;
+
+
 function initSession() {
-    sessionStorage.clear();
+  sessionStorage.clear();
 }
 
 function getSession(name) {
-    if (sessionStorage.getItem(name)) {
-        return JSON.parse(sessionStorage.getItem(name));
-    }
+  if (name && sessionStorage.getItem(name)) {
+    let data = sessionStorage.getItem(name);
+    return _deserialize(data);
+  }
 }
 
 function setSession(name, data) {
-    var store = sessionStorage.getItem(name);
+  if (name) {
+    let store = window.sessionStorage.getItem(name);
     if (store) {
-        console.warn(name + "=>数据在sessionStorage已存在,执行替换操作");
-        sessionStorage.removeItem(name);
+      console.warn(name + "=>数据在sessionStorage已存在,执行替换操作");
+      window.sessionStorage.removeItem(name);
     }
-    sessionStorage.setItem(name, JSON.stringify(data));
+
+    return window.sessionStorage.setItem(name, JSON.stringify(data));
+  }
 }
 
-//sessionStorage 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据
-export { initSession, getSession, setSession };
+function removeSession(name) {
+  if (name) {
+    return sessionStorage.removeItem(name);
+  }
+}
+
+function _deserialize(value) {
+  if (typeof value !== 'string') {
+    return undefined;
+  }
+
+  try {
+    return JSON.parse(value);
+  } catch (e) {
+    return value;
+  }
+}
