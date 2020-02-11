@@ -1,4 +1,4 @@
-export {today, yesterday};
+export { today, yesterday };
 
 function today(type) {
     var date = new Date();

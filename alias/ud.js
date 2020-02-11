@@ -2394,7 +2394,7 @@
                     _.isFunction(bCtor) &&
                     bCtor instanceof bCtor
                 ) &&
-                ("constructor" in a && "constructor" in b)
+                "constructor" in a && "constructor" in b
             ) {
                 return false;
             }

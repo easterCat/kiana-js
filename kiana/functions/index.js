@@ -2,10 +2,7 @@
  * Created by easterCat on 2018/1/24.
  */
 
-export {
-    debounce,
-    throttle
-}
+export { debounce, throttle };
 
 /**
  * 函数防抖
@@ -16,7 +13,7 @@ export {
  */
 function debounce(func, wait, immediate) {
     var timeout, result;
-    var debounced = function () {
+    var debounced = function() {
         var context = this;
         var args = arguments;
 
@@ -24,19 +21,19 @@ function debounce(func, wait, immediate) {
 
         if (immediate) {
             var callnow = !timeout;
-            timeout = setTimeout(function () {
+            timeout = setTimeout(function() {
                 timeout = null;
             }, wait);
             if (callnow) result = func.apply(context, args);
         } else {
-            timeout = setTimeout(function () {
+            timeout = setTimeout(function() {
                 func.apply(context, args);
             }, wait);
         }
         return result;
     };
 
-    debounced.cancel = function () {
+    debounced.cancel = function() {
         clearTimeout(timeout);
         timeout = null;
     };
@@ -56,7 +53,7 @@ function throttle(func, wait, options) {
     var previous_time = 0;
     if (!options) options = {};
 
-    var later = function () {
+    var later = function() {
         //leading为false将初始时间设为0
         previous_time = options.leading === false ? 0 : Date.now();
         timeout = null;
@@ -64,9 +61,10 @@ function throttle(func, wait, options) {
         if (!timeout) context = args = null;
     };
 
-    var throttled = function () {
+    var throttled = function() {
         var now_time = Date.now();
-        if (!previous_time && options.leading === false) previous_time = now_time;
+        if (!previous_time && options.leading === false)
+            previous_time = now_time;
         //下次触发func的剩余时间
         var remaining = wait - (now_time - previous_time);
         context = this;
@@ -87,7 +85,7 @@ function throttle(func, wait, options) {
         }
     };
 
-    throttled.cancel = function () {
+    throttled.cancel = function() {
         clearTimeout(timeout);
         previous_time = 0;
         timeout = null;

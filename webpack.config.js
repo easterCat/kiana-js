@@ -2,8 +2,9 @@
  * Created by easterCat on 2017/10/30.
  */
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+    .BundleAnalyzerPlugin;
 
 module.exports = {
     resolve: {
@@ -11,7 +12,7 @@ module.exports = {
     },
     entry: path.resolve(__dirname, "src/app.js"),
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "build"),
         filename: "index.js"
     },
     devtool: "cheap-source-map",
@@ -21,7 +22,7 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: "babel-loader",
+                    loader: "babel-loader"
                 }
             },
             {
@@ -53,13 +54,10 @@ module.exports = {
     devServer: {
         contentBase: "./src", //提供本地服务器
         historyApiFallback: true, //跳转index.html
-        port: 3333, //监听端口3333
+        port: 6973, //监听端口6973
         host: "localhost",
         hot: true, //热替换
         open: true
     },
-    plugins: [
-        new HtmlWebpackPlugin(),
-        new BundleAnalyzerPlugin(),
-    ]
+    plugins: [new HtmlWebpackPlugin(), new BundleAnalyzerPlugin()]
 };

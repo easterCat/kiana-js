@@ -32,6 +32,8 @@
   },
   "bundleDependencies": false,
   "dependencies": {
+    "fs-extra": "^8.1.0",
+    "jsdoc-to-markdown": "^5.0.3",
     "kiana-js": "^1.0.12",
     "lodash": "^4.17.11",
     "ypkgfiles": "^1.6.0"
@@ -49,6 +51,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.2.0",
+    "eslint": "^6.8.0",
     "file-loader": "^1.1.6",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
@@ -80,8 +83,10 @@
     "rollup": "rollup --config rollup.config.js",
     "start": "webpack-dev-server --hot --inline --devtool eval --progress --colors --config webpack.config.js",
     "test": "test",
+    "eslint": "eslint --ext .js src",
     "update": "node ./bin/update.js",
-    "patch": "npm version patch && npm publish"
+    "publish": "npm version patch && npm publish",
+    "doc": "node ./bin/jsdoc2md.js"
   },
   "version": "1.0.18"
 }

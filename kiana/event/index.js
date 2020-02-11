@@ -2,39 +2,45 @@
  * Created by fuhuo on 2017/11/22.
  * EventEmitter
  */
-(function () {
-    var root = (typeof self == 'object' && self.self == self && self) ||
-        (typeof global == 'object' && global.global == global && global) ||
-        this || {};
+(function() {
+    var root =
+        (typeof self == "object" && self.self == self && self) ||
+        (typeof global == "object" && global.global == global && global) ||
+        this ||
+        {};
 
     function Em() {
         this._events = {};
     }
 
-    Em.prototype.on = function (eventname, listener) {
+    Em.prototype.on = function(eventname, listener) {
         if (!eventname || !listener) return;
 
         if (!_isValidListener(listener)) {
-            throw new TypeError('listener must be a function');
+            throw new TypeError("listener must be a function");
         }
 
         var events = this._events;
-        var listeners = events[eventname] = events[eventname] || [];
+        var listeners = (events[eventname] = events[eventname] || []);
         //如果listener是一个对象，则返回true
-        var listenerIsWrapped = typeof listener === 'object';
+        var listenerIsWrapped = typeof listener === "object";
 
         if (_indexOf(listeners, listener) === -1) {
             //如果listener是一个对象，则直接传入listener
-            listeners.push(listenerIsWrapped ? listener : {
-                listener: listener,
-                once: false
-            });
+            listeners.push(
+                listenerIsWrapped
+                    ? listener
+                    : {
+                          listener: listener,
+                          once: false
+                      }
+            );
         }
 
         return this;
     };
 
-    Em.prototype.off = function (eventname, listener) {
+    Em.prototype.off = function(eventname, listener) {
         var listeners = this._events[eventname];
         if (!listeners) {
             throw new Error("can't find eventname in off function");
@@ -48,14 +54,14 @@
             }
         }
 
-        if (index !== 'undefined') {
+        if (index !== "undefined") {
             listeners.splice(index, 1, null);
         }
 
         return this;
     };
 
-    Em.prototype.emit = function (eventname, args) {
+    Em.prototype.emit = function(eventname, args) {
         var listeners = this._events[eventname];
         if (!listeners) {
             throw new Error("can't find this event");
@@ -75,14 +81,14 @@
         return this;
     };
 
-    Em.prototype.once = function (eventname, listener) {
+    Em.prototype.once = function(eventname, listener) {
         return this.on(eventname, {
             listener: listener,
             once: true
-        })
+        });
     };
 
-    Em.prototype.allOff = function (eventname) {
+    Em.prototype.allOff = function(eventname) {
         if (eventname && this._events[eventname]) {
             this._events[eventname] = [];
         } else {
@@ -91,12 +97,12 @@
     };
 
     function _isValidListener(listener) {
-        if (typeof listener === 'function') {
-            return true
-        } else if (listener && typeof listener === 'object') {
-            return _isValidListener(listener.listener)
+        if (typeof listener === "function") {
+            return true;
+        } else if (listener && typeof listener === "object") {
+            return _isValidListener(listener.listener);
         } else {
-            return false
+            return false;
         }
     }
 
@@ -115,8 +121,12 @@
         }
     }
 
-    if (typeof exports !== 'undefined' && !exports.nodeType) {
-        if (typeof module !== 'undefined' && !module.nodeType && module.exports) {
+    if (typeof exports !== "undefined" && !exports.nodeType) {
+        if (
+            typeof module !== "undefined" &&
+            !module.nodeType &&
+            module.exports
+        ) {
             exports = module.exports = Em;
         }
         exports.Em = Em;

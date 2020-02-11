@@ -3,7 +3,7 @@
  */
 
 export function removeCookie(key) {
-  let date = new Date();
-  date.setTime(date.getTime() - 10000);
-  document.cookie = key + "=v; expires =" + date.toGMTString();
+    let date = new Date();
+    date.setTime(date.getTime() - 10000);
+    document.cookie = key + "=v; expires =" + date.toGMTString();
 }

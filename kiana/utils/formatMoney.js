@@ -2,7 +2,6 @@
  * Created by easterCat on 2019/4/6.
  */
 
-
 /**
  * 将金额转英文计算样式
  * @param money 需要格式的money
@@ -21,7 +20,10 @@ export function formatMoney(money, place) {
         place = 2;
     }
 
-    momey = parseFloat((money + "").replace(/[^\d\.-]/g, "")).toFixed(Number(place)) + "";
+    momey =
+        parseFloat((money + "").replace(/[^\d\.-]/g, "")).toFixed(
+            Number(place)
+        ) + "";
 
     var money_arr = money.split(".");
     var left = money_arr[0].split("").reverse();
@@ -29,12 +31,19 @@ export function formatMoney(money, place) {
     var result = "";
 
     for (var i = 0; i < left.length; i++) {
-        result += left[i] + ((i + 1) % 3 === 0 && (i + 1) !== left.length ? "," : "");
+        result +=
+            left[i] + ((i + 1) % 3 === 0 && i + 1 !== left.length ? "," : "");
     }
 
-    result = result.split("").reverse().join("") + "." + right;
+    result =
+        result
+            .split("")
+            .reverse()
+            .join("") +
+        "." +
+        right;
 
-    if (result[0] === ",") result = result.replace(',', '');
+    if (result[0] === ",") result = result.replace(",", "");
 
     if (add) {
         return add + result;

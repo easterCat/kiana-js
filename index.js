@@ -18,7 +18,7 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 });
 
 var _core = createCommonjsModule(function (module) {
-var core = module.exports = { version: '2.6.5' };
+var core = module.exports = { version: '2.6.11' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 });
 var _core_1 = _core.version;
@@ -273,7 +273,7 @@ var store = _global[SHARED] || (_global[SHARED] = {});
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
   version: _core.version,
-  mode: 'pure',
+  mode:  'pure' ,
   copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 });
 });
@@ -343,6 +343,7 @@ var _toObject = function (it) {
 
 
 
+
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -367,7 +368,10 @@ var _objectAssign = !$assign || _fails(function () {
     var length = keys.length;
     var j = 0;
     var key;
-    while (length > j) if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
+    while (length > j) {
+      key = keys[j++];
+      if (!_descriptors || isEnum.call(S, key)) T[key] = S[key];
+    }
   } return T;
 } : $assign;
 
@@ -570,7 +574,7 @@ var _iterDefine = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORC
     $default = function values() { return $native.call(this); };
   }
   // Define iterator
-  if ((FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
+  if (( FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
     _hide(proto, ITERATOR, $default);
   }
   if (DEFAULT) {
@@ -721,7 +725,7 @@ var _meta_5 = _meta.onFreeze;
 
 var defineProperty = _objectDp.f;
 var _wksDefine = function (name) {
-  var $Symbol = _core.Symbol || (_core.Symbol = {});
+  var $Symbol = _core.Symbol || (_core.Symbol =  {} );
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: _wksExt.f(name) });
 };
 
@@ -824,6 +828,8 @@ var META = _meta.KEY;
 
 
 
+
+
 var gOPD$1 = _objectGopd.f;
 var dP$1 = _objectDp.f;
 var gOPN$1 = _objectGopnExt.f;
@@ -838,7 +844,7 @@ var SymbolRegistry = _shared('symbol-registry');
 var AllSymbols = _shared('symbols');
 var OPSymbols = _shared('op-symbols');
 var ObjectProto$1 = Object[PROTOTYPE$2];
-var USE_NATIVE = typeof $Symbol == 'function';
+var USE_NATIVE = typeof $Symbol == 'function' && !!_objectGops.f;
 var QObject = _global.QObject;
 // Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
 var setter = !QObject || !QObject[PROTOTYPE$2] || !QObject[PROTOTYPE$2].findChild;
@@ -999,6 +1005,16 @@ _export(_export.S + _export.F * !USE_NATIVE, 'Object', {
   getOwnPropertySymbols: $getOwnPropertySymbols
 });
 
+// Chrome 38 and 39 `Object.getOwnPropertySymbols` fails on primitives
+// https://bugs.chromium.org/p/v8/issues/detail?id=3443
+var FAILS_ON_PRIMITIVES = _fails(function () { _objectGops.f(1); });
+
+_export(_export.S + _export.F * FAILS_ON_PRIMITIVES, 'Object', {
+  getOwnPropertySymbols: function getOwnPropertySymbols(it) {
+    return _objectGops.f(_toObject(it));
+  }
+});
+
 // 24.3.2 JSON.stringify(value [, replacer [, space]])
 $JSON && _export(_export.S + _export.F * (!USE_NATIVE || _fails(function () {
   var S = $Symbol();
@@ -1078,9 +1094,13 @@ var _objectToArray = function (isEntries) {
     var i = 0;
     var result = [];
     var key;
-    while (length > i) if (isEnum$1.call(O, key = keys[i++])) {
-      result.push(isEntries ? [key, O[key]] : O[key]);
-    } return result;
+    while (length > i) {
+      key = keys[i++];
+      if (!_descriptors || isEnum$1.call(O, key)) {
+        result.push(isEntries ? [key, O[key]] : O[key]);
+      }
+    }
+    return result;
   };
 };
 
@@ -1336,6 +1356,7 @@ function _type(obj) {
 }
 
 var obj = /*#__PURE__*/Object.freeze({
+	__proto__: null,
 	keys: keys$2,
 	values: values$2,
 	extend: extend,
@@ -1483,6 +1504,7 @@ function _cb(fn, context) {
 }
 
 var arr = /*#__PURE__*/Object.freeze({
+	__proto__: null,
 	difference: difference,
 	findIndex: findIndex,
 	findLastIndex: findLastIndex,
@@ -1587,6 +1609,7 @@ function throttle(func, wait, options) {
 }
 
 var func = /*#__PURE__*/Object.freeze({
+	__proto__: null,
 	debounce: debounce,
 	throttle: throttle
 });
@@ -1657,6 +1680,7 @@ function _patch_zero(num) {
 }
 
 var time = /*#__PURE__*/Object.freeze({
+	__proto__: null,
 	today: today,
 	yesterday: yesterday
 });
@@ -1724,6 +1748,7 @@ function isWx() {
 }
 
 var browser = /*#__PURE__*/Object.freeze({
+	__proto__: null,
 	getBrowserInfo: getBrowserInfo,
 	inBrowser: inBrowser,
 	isWx: isWx
@@ -1761,6 +1786,7 @@ function isAndroid() {
 }
 
 var mobile = /*#__PURE__*/Object.freeze({
+	__proto__: null,
 	isMobile: isMobile,
 	isIphone: isIphone,
 	isAndroid: isAndroid
@@ -1812,9 +1838,23 @@ function setLocal(name, data) {
  * Created by easterCat on 2019/4/6.
  */
 
+//用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据
 function getSession(name) {
-  if (sessionStorage.getItem(name)) {
-    return JSON.parse(sessionStorage.getItem(name));
+  if (name && sessionStorage.getItem(name)) {
+    var data = sessionStorage.getItem(name);
+    return _deserialize(data);
+  }
+}
+
+function _deserialize(value) {
+  if (typeof value !== 'string') {
+    return undefined;
+  }
+
+  try {
+    return JSON.parse(value);
+  } catch (e) {
+    return value;
   }
 }
 
@@ -1831,12 +1871,15 @@ function initSession() {
  */
 
 function setSession(name, data) {
-  var store = sessionStorage.getItem(name);
-  if (store) {
-    console.warn(name + "=>数据在sessionStorage已存在,执行替换操作");
-    sessionStorage.removeItem(name);
+  if (name) {
+    var store = window.sessionStorage.getItem(name);
+    if (store) {
+      console.warn(name + "=>数据在sessionStorage已存在,执行替换操作");
+      window.sessionStorage.removeItem(name);
+    }
+
+    return window.sessionStorage.setItem(name, _JSON$stringify(data));
   }
-  sessionStorage.setItem(name, _JSON$stringify(data));
 }
 
 function MyDate() {
@@ -1939,6 +1982,7 @@ MyDate.prototype.patchZero = function (num) {
 var d = new MyDate();
 
 var date = /*#__PURE__*/Object.freeze({
+	__proto__: null,
 	d: d
 });
 

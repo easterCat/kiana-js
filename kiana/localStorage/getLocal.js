@@ -3,7 +3,7 @@
  */
 
 export function getLocal(name) {
-  if (localStorage.getItem(name)) {
-    return JSON.parse(localStorage.getItem(name));
-  }
+    if (localStorage.getItem(name)) {
+        return JSON.parse(localStorage.getItem(name));
+    }
 }
